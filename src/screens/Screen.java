@@ -1,7 +1,12 @@
 package screens;
 
 import processing.core.PApplet;
-
+/**
+ * The screen class represents all screens that are displayed between games including the 
+ * main menu and other future screens.
+ * @author Eric Decasper
+ *
+ */
 public abstract class Screen {
 
 	public abstract void update();
