@@ -1,5 +1,11 @@
 package entities;
 
-public class Player extends Entity{
+/**
+ * Represents the vehicle which the player is
+ * @author Vikram
+ *
+ */
+public class Player extends Entity
+{
 
 }
