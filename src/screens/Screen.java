@@ -10,12 +10,11 @@ import processing.core.PApplet;
 
 public abstract class Screen {
 	/**
-	 * update
+	 * This method draws the th
+	 * @param PApplet g the drawer
 	 */
-	public abstract void update();
-
 	public abstract void draw(PApplet g);
-	
+	public abstract void update();
 	public int clickMouse(int x, int y) {
 		return -1;
 	}
