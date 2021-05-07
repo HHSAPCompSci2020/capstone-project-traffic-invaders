@@ -24,7 +24,7 @@ public class Game extends PApplet{
 	}
 	
 	/**
-	 * The draw method constantly runs and updates the screen.
+	 * The draw method in game draws the screens and everything that is displayed on the window
 	 */
 	public void draw() {
 		background(0,0,0);
