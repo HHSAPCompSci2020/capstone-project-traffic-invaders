@@ -5,6 +5,13 @@ import javax.swing.JFrame;
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 
+/**
+ * The Runner class runs the entire program. It creates 
+ * the game panel and a new game to run.
+ * @author Karan Dalal
+ * @version 1.0
+ *
+ */
 public class Runner {
 	public static void main(String args[]) {
 		Game drawing = new Game();
