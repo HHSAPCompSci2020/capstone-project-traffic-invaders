@@ -9,9 +9,15 @@ public class MainMenu extends Screen{
 
 	@Override
 	public void draw(PApplet g) {
-		g.background(0, 204, 204);// background is set to cyan
+		g.background(0, 204, 204);// Background is set to cyan
 		g.stroke(0, 0, 0); //sets the stroke to black
-		g.text("MAINMENU", g.width / 2 - g.textWidth("Game") / 2, g.height / 2); 
+		g.text("MAINMENU", g.width / 2 - g.textWidth("MAINMENU") / 2, g.height / 2); 
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
