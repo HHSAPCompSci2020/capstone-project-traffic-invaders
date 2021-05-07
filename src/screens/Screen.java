@@ -7,7 +7,6 @@ import processing.core.PApplet;
  * @author Eric Decasper
  *
  */
-
 public abstract class Screen {
 	public abstract void draw(PApplet g);
 	public abstract void update();
