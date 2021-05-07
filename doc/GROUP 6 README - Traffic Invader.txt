@@ -127,19 +127,20 @@ Sound.java : Handles music and sound elements
 
 Credits:
 Eric Decasper: 
-Game.java: Extends PApplet. Has the main game loop. 
 Car.java: Represents the incoming cars or obstacles.
-
-
-Karan Dalal: 
 Player.java: Represents the player also a car.
 Entity.java: The superclass of Car and Player.
+MainMen.java: the main menu screen
+
+Karan Dalal: 
+Game.java: Extends PApplet. Has the main game loop.
+Runner.java: runner of the project
  
 Vikram:
+Screen.java: superclass of all screens.
 BackGroundManager.java: manages backgrounds. Picks and displayed them
 BackGround.java: Superclass of all backgrounds
 NormalRoad.java: default background.
-Sound.java : handles music and sound effects
 
 
 
