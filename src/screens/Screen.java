@@ -1,5 +1,12 @@
 package screens;
 
-public class Screen {
+import processing.core.PApplet;
 
+public abstract class Screen {
+
+	public abstract void draw(PApplet g);
+	
+	public int clickMouse(int x, int y) {
+		return -1;
+	}
 }
