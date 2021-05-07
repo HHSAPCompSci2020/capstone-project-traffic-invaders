@@ -9,12 +9,15 @@ import processing.core.PApplet;
  */
 
 public abstract class Screen {
-	/**
-	 * This method draws the th
-	 * @param PApplet g the drawer
-	 */
 	public abstract void draw(PApplet g);
 	public abstract void update();
+	
+	/**
+	 * Returns negative one right now if the mouse is clicked in screen. Used for debugging.
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public int clickMouse(int x, int y) {
 		return -1;
 	}
