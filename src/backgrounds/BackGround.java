@@ -2,7 +2,7 @@ package backgrounds;
 
 /**
  * Superclass of all backgrounds 
- * @author Vikram
+ * @author Vikram Penumarti
  * @version 1.0
  */
 public class BackGround 
