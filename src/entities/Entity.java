@@ -18,12 +18,6 @@ public abstract class Entity {
 		
 	}
 	
-	
-	public void move(double velX, double velY) {
-		this.x += velX;
-		this.y += velY;
-	}
-	
 	public abstract void act();
 
 	public abstract void draw(PApplet g);

@@ -9,7 +9,7 @@ import processing.core.PApplet;
  * @version 1.0
  */
 public class Player extends Entity {
-	private int velX, velY;
+	private int disX, disY;
 	private boolean left, right, up, down;
 	private int velocity;
 	
@@ -29,14 +29,15 @@ public class Player extends Entity {
 	@Override
 	public void act() {
 		if(up) {
-			velY -= velocity;
+			disY -= velocity;
 		}else if(down) {
-			velY += velocity;
+			disY += velocity;
 		}else if(right) {
-			velX += velocity;
+			disX += velocity;
 		}else if(left) {
-			
+			disX -= velocity;
 		}
+		setLoc(getX() + disX, getY() + disY);
 	}
 
 	@Override
