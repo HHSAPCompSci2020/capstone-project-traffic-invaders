@@ -16,7 +16,7 @@ public class NormalRoad extends BackGround
 	
 	public void draw(PApplet s)
 	{
-		super.draw(s);
+		super.draw(s, 100);
 	}
 	
 	public void scroll(PApplet s)

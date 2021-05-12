@@ -20,8 +20,9 @@ public class BackGround
 		difficulty = 1;
 	}
 	
-	public void draw(PApplet s)
+	public void draw(PApplet s, int color)
 	{
+		s.background(color);
 		time++;
 		scroll(s);
 	}
@@ -31,8 +32,6 @@ public class BackGround
 		runs++;
 		
 		time += difficulty;
-		
-		s.background(100);
 		
 		s.line(s.width/5, 0, s.width/5, s.height);
 		s.line(s.width - s.width/5, 0, s.width - s.width/5, s.height);
