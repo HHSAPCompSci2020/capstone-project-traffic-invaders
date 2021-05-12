@@ -4,7 +4,7 @@ import processing.core.PApplet;
 /**
  * The screen class is the superclass of all screens and all the are displayed between games including the 
  * main menu and other future screens.
- * @author Eric Decasper
+ * @author Vikram Penumarti
  *
  */
 public abstract class Screen {
