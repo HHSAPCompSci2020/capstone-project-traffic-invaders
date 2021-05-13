@@ -1,3 +1,5 @@
+import backgrounds.Background;
+import backgrounds.NormalRoad;
 import processing.core.PApplet;
 import screens.MainMenu;
 import screens.Screen;
@@ -12,6 +14,8 @@ import screens.Screen;
 public class Game extends PApplet{
 	
 	private Screen screen;
+	
+	private Background b;
 
 	/**
 	 * The setup method sets up the game panel for play with the MainMenu screen.
@@ -21,15 +25,18 @@ public class Game extends PApplet{
 		surface.setSize(400,300);
 		surface.setResizable(false);
 
+		b = new NormalRoad();
 	}
 	
 	/**
 	 * The draw method in game draws the screens and everything that is displayed on the window
 	 */
 	public void draw() {
-		background(0,0,0);
-		screen.draw(this);
-		screen.update();
+//		background(0,0,0);
+//		screen.draw(this);
+//		screen.update();
+		
+		b.draw(this);
 	}
 	
 }
