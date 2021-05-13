@@ -5,7 +5,7 @@ package backgrounds;
  * @author Vikram Penumarti
  * @version 1.0
  */
-public class BackGroundManager
+public class BackgroundManager
 {
 
 }

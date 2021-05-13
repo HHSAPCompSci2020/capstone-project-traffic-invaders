@@ -7,20 +7,30 @@ import processing.core.PApplet;
  * @author Vikram Penumarti
  * @version 1.0
  */
-public class NormalRoad extends BackGround
+public class NormalRoad extends Background
 {
 	public NormalRoad()
 	{
-		super();
+		super(100, 100, 100);
 	}
 	
 	public void draw(PApplet s)
 	{
-		super.draw(s, 100);
+		super.draw(s);
 	}
 	
 	public void scroll(PApplet s)
 	{
 		super.scroll(s);
+		
+		for(int i = 0; i <= 1000; i++)
+		{
+			s.rect(s.width/2 - s.width/40, -i * 3 * s.height/20 + time, s.width/40, s.height/20);
+		}
+		
+		if(runs % 1800 == 0)
+		{
+			difficulty++;
+		}
 	}
 }
