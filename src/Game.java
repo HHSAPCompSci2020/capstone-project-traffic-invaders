@@ -24,7 +24,7 @@ public class Game extends PApplet{
 	 * The setup method sets up the game panel for play with the MainMenu screen.
 	 */
 	public void setup() {
-		player = new Player(50,50, 50, 50);
+		player = new Player(50,50,50, 50);
 		screen = new MainGame(player);
 		surface.setSize(800,600);
 		surface.setResizable(true);
@@ -46,6 +46,28 @@ public class Game extends PApplet{
 		player.draw(this);
 		player.act();
 	
+	}
+	public void keyPressed() {
+		if(key == 'a') {
+			player.setLeft(true);
+		}else if(key == 's') {
+			player.setDown(true);
+		}else if(key == 'w') {
+			player.setUp(true);
+		}else if(key == 'd') {
+			player.setRight(true);
+		}
+	}
+	public void keyReleased() {
+		if(key == 'a') {
+			player.setLeft(false);
+		}else if(key == 's') {
+			player.setDown(false);
+		}else if(key == 'w') {
+			player.setUp(false);
+		}else if(key == 'd') {
+			player.setRight(false);
+		}
 	}
 	
 }
