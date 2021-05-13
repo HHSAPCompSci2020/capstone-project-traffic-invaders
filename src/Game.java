@@ -23,7 +23,7 @@ public class Game extends PApplet{
 	public void setup() {
 		screen = new MainMenu();
 		surface.setSize(400,300);
-		surface.setResizable(false);
+		surface.setResizable(true);
 
 		b = new NormalRoad();
 	}
