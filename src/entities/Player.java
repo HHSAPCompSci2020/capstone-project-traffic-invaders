@@ -16,8 +16,8 @@ public class Player extends Entity {
 	public Player(int x, int y, int width, int height) {
 
 		super(x, y, width, height);
-		disX = 10;
-		disY = 10;
+		disX = 0;
+		disY = 0;
 		left = false;
 		right = false;
 		up = false;

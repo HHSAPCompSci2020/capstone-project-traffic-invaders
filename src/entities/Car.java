@@ -18,14 +18,14 @@ public class Car extends Entity
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
-		setLoc(getX(), getY() - 2);
+		setLoc(getX(), getY() + 2);
 	}
 
 	@Override
 	public void draw(PApplet g) {
 		// TODO Auto-generated method stub
 		g.pushMatrix();
-		g.fill(0, 255, 255);
+		//g.fill(0, 255, 255);
 		g.rect(getX(), getY(), getWidth(), getHeight());
 		g.popMatrix();
 	}
