@@ -11,24 +11,37 @@ import processing.core.PApplet;
 public class Player extends Entity {
 	private int disX, disY;
 	private boolean left, right, up, down;
-	private int velocity;
+	private int velocity, velDiag;
 	
 	public Player(int x, int y, int width, int height) {
 
 		super(x, y, width, height);
-		velX = 10;
-		velY = 10;
+		disX = 10;
+		disY = 10;
 		left = false;
 		right = false;
 		up = false;
 		down = false;
 		velocity = 2;
+		velDiag = (int) (Math.pow(2.0, (0.5)) / 2) * velocity;
 	}
 	// public player()
 
 	@Override
 	public void act() {
-		if(up) {
+		if(up && right) {
+			disY -= velDiag;
+			disX += velDiag;
+		}else if(up && left) {
+			disY -= velDiag;
+			disX -= velDiag;
+		}else if(down && right) {
+			disY += velDiag;
+			disX += velDiag;
+		}else if(down && left) {
+			disY += velDiag;
+			disX -= velDiag;
+		}else if(up) {
 			disY -= velocity;
 		}else if(down) {
 			disY += velocity;
