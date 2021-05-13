@@ -122,6 +122,7 @@ Entity.java: The superclass of Car and Player.
 BackGroundManager.java: Manages variety of backgrounds. Picks and displays them.
 BackGround.java: Superclass of all backgrounds
 NormalRoad.java: Default background of program
+DoubleRoad.java Same as NormalRoad, except has two lane dividers
 Sound.java : Handles music and sound elements
 
 
@@ -140,6 +141,7 @@ Vikram:
 BackGroundManager.java: manages backgrounds. Picks and displayed them
 BackGround.java: Superclass of all backgrounds
 NormalRoad.java: default background.
+DoubleRoad.java: Same as NormalRoad, except has two lane dividers
 Screen.java: the superclass of all screens
 
 
