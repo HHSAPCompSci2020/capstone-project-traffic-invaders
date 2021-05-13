@@ -14,6 +14,12 @@ public class Background
 	int runs;
 	private int r, g, b;
 	
+	/**
+	 * Sets the amount of times draw() has run, the time passed, and the difficulty factor, and gets colors 
+	 * @param r the red color value
+	 * @param g the green color value
+	 * @param b the blue color value
+	 */
 	public Background(int r, int g, int b)
 	{
 		runs = 0;
@@ -24,6 +30,10 @@ public class Background
 		this.b = b;
 	}
 	
+	/**
+	 * Method that draws the backgrounds
+	 * @param s PApplet object 
+	 */
 	public void draw(PApplet s)
 	{
 		s.background(r, g, b);
@@ -31,6 +41,10 @@ public class Background
 		scroll(s);
 	}
 	
+	/**
+	 * Scrolls down the screen
+	 * @param s PApplet object
+	 */
 	public void scroll(PApplet s)
 	{		
 		runs++;

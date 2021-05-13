@@ -9,16 +9,27 @@ import processing.core.PApplet;
  */
 public class NormalRoad extends Background
 {
+	/**
+	 * Passes the rgb color value to the superclass constructor
+	 */
 	public NormalRoad()
 	{
 		super(100, 100, 100);
 	}
 	
+	/**
+	 * Draws the normal road
+	 * @param s PApplet object
+	 */
 	public void draw(PApplet s)
 	{
 		super.draw(s);
 	}
 	
+	/**
+	 * Scrolls the screen down
+	 * @param s PApplet object
+	 */
 	public void scroll(PApplet s)
 	{
 		super.scroll(s);
