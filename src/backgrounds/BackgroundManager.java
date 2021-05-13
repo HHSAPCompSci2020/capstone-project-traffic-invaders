@@ -7,5 +7,5 @@ package backgrounds;
  */
 public class BackgroundManager
 {
-
+	
 }

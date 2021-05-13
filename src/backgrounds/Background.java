@@ -54,4 +54,9 @@ public class Background
 		s.line(s.width/5, 0, s.width/5, s.height);
 		s.line(s.width - s.width/5, 0, s.width - s.width/5, s.height);	
 	}
+	
+	public float getSpeed()
+	{
+		return time;
+	}
 }
