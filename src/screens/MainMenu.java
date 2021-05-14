@@ -1,9 +1,5 @@
 package screens;
 
-import java.util.ArrayList;
-
-import javax.swing.JButton;
-
 import processing.core.PApplet;
 
 /**
