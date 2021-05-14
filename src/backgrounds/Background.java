@@ -13,7 +13,8 @@ public class Background
 	float difficulty;
 	int runs;
 	private int r, g, b;
-	
+	private static int firstLineX;
+	private static int secondLineX;
 	/**
 	 * Sets the amount of times draw() has run, the time passed, and the difficulty factor, and gets colors 
 	 * @param r the red color value
@@ -22,6 +23,8 @@ public class Background
 	 */
 	public Background(int r, int g, int b)
 	{
+		firstLineX = 0;
+		secondLineX = 0;
 		runs = 0;
 		time = 0;
 		difficulty = 1;
@@ -50,11 +53,17 @@ public class Background
 		runs++;
 		
 		time += difficulty;
-		
-		s.line(s.width/5, 0, s.width/5, s.height);
-		s.line(s.width - s.width/5, 0, s.width - s.width/5, s.height);	
+		firstLineX = s.width/5;
+		secondLineX = s.width - s.width / 5;
+		s.line(firstLineX, 0, firstLineX, s.height);
+		s.line(secondLineX, 0, secondLineX, s.height);	
 	}
-	
+	public static int getFirstLineX() {
+		return firstLineX;
+	}
+	public static int getSecondLineX() {
+		return secondLineX;
+	}
 	public float getSpeed()
 	{
 		return time;
