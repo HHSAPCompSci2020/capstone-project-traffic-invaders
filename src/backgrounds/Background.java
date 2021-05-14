@@ -12,7 +12,9 @@ public class Background
 	static float time;
 	float difficulty;
 	int runs;
+	
 	private int r, g, b;
+	
 	private static int firstLineX;
 	private static int secondLineX;
 	
@@ -24,11 +26,13 @@ public class Background
 	 */
 	public Background(int r, int g, int b)
 	{
-		firstLineX = 0;
-		secondLineX = 0;
 		runs = 0;
 		time = 0;
 		difficulty = 1;
+		
+		firstLineX = 0;
+		secondLineX = 0;
+
 		this.r = r;
 		this.g = g;
 		this.b = b;
@@ -41,8 +45,12 @@ public class Background
 	public void draw(PApplet s)
 	{
 		s.background(r, g, b);
+		
+		//every time draw() is called time increases
 		time++;
+		
 		s.text("Score: " + getSpeed(), s.width/16, s.height/12);
+		
 		scroll(s);
 	}
 	
@@ -52,11 +60,15 @@ public class Background
 	 */
 	public void scroll(PApplet s)
 	{		
+		//every time scroll() is called runs increases 
 		runs++;
 		
+		//difficulty is added to time every scroll() call
 		time += difficulty;
+		
 		firstLineX = s.width/5;
 		secondLineX = s.width - s.width / 5;
+		
 		s.line(firstLineX, 0, firstLineX, s.height);
 		s.line(secondLineX, 0, secondLineX, s.height);	
 	}
