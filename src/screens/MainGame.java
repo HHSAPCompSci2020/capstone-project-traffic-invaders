@@ -37,6 +37,9 @@ public class MainGame extends Screen{
 			e.act();
 		}
 	}
+	public static void remove(Entity e) {
+		entities.remove(entities.indexOf(e));
+	}
 	public static ArrayList<Entity> getEntities(){
 		return entities;
 	}

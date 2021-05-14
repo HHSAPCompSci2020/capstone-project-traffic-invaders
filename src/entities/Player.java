@@ -12,10 +12,13 @@ public class Player extends Entity {
 	private int disX, disY;
 	private boolean left, right, up, down;
 	private int velocity, velDiag, maxVelocity, friction;
-
+	private int health; 
+	
+	
 	public Player(int x, int y, int width, int height) {
 
 		super(x, y, width, height);
+		health = 3;
 		disX = 0;
 		disY = 1;
 		left = false;
@@ -93,7 +96,12 @@ public class Player extends Entity {
 		g.rect(getX(), getY(), getWidth(), getHeight());
 		g.popMatrix();
 	}
-
+	public int getHealth() {
+		return health;
+	}
+	public void hit() {
+		health--;
+	}
 	public void setUp(boolean x) {
 		up = x;
 	}
