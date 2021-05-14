@@ -10,18 +10,31 @@ import processing.core.PApplet;
  */
 public class Car extends Entity
 {
-
+	/**
+	 * Constructs the car.
+	 * @param x The upper left x coordinate of the rectangle.
+	 * @param y	The upper left y coordinate of the rectangle
+	 * @param width The width of the rectangle
+	 * @param height The height of the rectangle
+	 */
 	public Car(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/**
+	 * The act method handles all the movement of the car moving the cars down the road at the specified rate.
+	 */
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
 		setLoc(getX(), getY() + ((int) NormalRoad.getScrollRate()) / 100);
 	}
-
+	
+	/**
+	 * The draw method draws the car with all its attributes. 
+	 * @param g the PApplet object passed into the method.
+	 */
 	@Override
 	public void draw(PApplet g) {
 		// TODO Auto-generated method stub
