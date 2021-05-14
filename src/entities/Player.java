@@ -14,8 +14,15 @@ public class Player extends Entity {
 	private boolean left, right, up, down;
 	private int velocity, velDiag, maxVelocity, friction;
 	private int health; 
+
 	
-	
+	/**
+	 * Constructs the player and instantiated the variables. 
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
+	 */
 	public Player(int x, int y, int width, int height) {
 
 		super(x, y, width, height);
@@ -32,7 +39,10 @@ public class Player extends Entity {
 		velDiag = (int) (Math.pow(2.0, (0.5)) / 2) * velocity;
 	}
 	// public player()
-
+	
+	/**
+	 * The act method handles all the movement based on the directional boolean variables. It applies friction and sets the location of the player.
+	 */
 	@Override
 	public void act() {
 		if (right != left) {
@@ -69,7 +79,10 @@ public class Player extends Entity {
 		}
 
 	}
-
+	/**
+	 * The draw method draws the the player's car/
+	 * @param g PApplet object
+	 */
 	@Override
 	public void draw(PApplet g) {
 		g.pushMatrix();
@@ -96,6 +109,9 @@ public class Player extends Entity {
 	public int getHealth() {
 		return health;
 	}
+	/**
+	 * Hit reduces the health of the player by one. 
+	 */
 	public void hit() {
 		health--;
 	}
