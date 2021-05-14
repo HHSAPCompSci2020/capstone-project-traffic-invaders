@@ -1,3 +1,5 @@
+package structure;
+
 import java.util.ArrayList;
 
 import backgrounds.Background;
@@ -24,6 +26,8 @@ public class Game extends PApplet {
 	private Background b;
 
 	public static CurrentScreen current;
+	private int tick, lastHit;
+	private static boolean onCoolDown;
 
 	private enum CurrentScreen {
 		MENU, GAME, GAMEOVER;
@@ -35,6 +39,8 @@ public class Game extends PApplet {
 	 * The setup method sets up the game panel for play with the MainMenu screen.
 	 */
 	public void setup() {
+		tick = 0;
+		lastHit = 0;
 		current = CurrentScreen.MENU;
 		screen = new MainMenu();
 		surface.setSize(800, 600);
@@ -65,7 +71,7 @@ public class Game extends PApplet {
 		int type = MainMenu.clicked(mouseX, mouseY);
 		if (current == CurrentScreen.MENU) {
 			if (type == 1) {
-				player = new Player(width / 2, height - 50, 50, 75);
+				player = new Player(width / 2, height - 100, 50, 75);
 				screen = new MainGame(player);
 				current = CurrentScreen.GAME;
 			}
@@ -101,17 +107,33 @@ public class Game extends PApplet {
 	}
 
 	public void collision(Player player) {
+		tick++;
+		System.out.println(onCoolDown);
+
 		ArrayList<Entity> entities = MainGame.getEntities();
-		for (Entity e : entities) {
-			if (e instanceof Player) {
-				continue;
+		// System.out.println(lastHit - tick);
+		if (!onCoolDown) {
+			for (Entity e : entities) {
+				if (e instanceof Player) {
+					continue;
+				}
+				if (player.isPointInside(e.getX(), e.getY()) || player.isPointInside(e.getX() + e.getWidth(), e.getY())
+						|| player.isPointInside(e.getX(), e.getY() + e.getHeight())
+						|| player.isPointInside(e.getX() + e.getWidth(), e.getY() + e.getHeight())) {
+					System.out.println("hit");
+					player.hit();
+					onCoolDown = true;
+					lastHit = tick;
+
+					if (player.getHealth() <= 0) {
+						screen = new GameOver();
+						current = CurrentScreen.GAMEOVER;
+					}
+
+				}
 			}
-			if (player.isPointInside(e.getX(), e.getY()) || player.isPointInside(e.getX() + e.getWidth(), e.getY())
-					|| player.isPointInside(e.getX(), e.getY() + e.getHeight())
-					|| player.isPointInside(e.getX() + e.getWidth(), e.getY() + e.getHeight())) {
-				screen = new GameOver();
-				current = CurrentScreen.GAMEOVER;
-			}
+		} else if (tick - lastHit > 100) {
+			onCoolDown = false;
 		}
 		if (player.getX() < Background.getFirstLineX()) {
 			player.setLoc(Background.getFirstLineX(), player.getY());
@@ -123,8 +145,23 @@ public class Game extends PApplet {
 			player.setLoc(player.getX(), 0);
 		}
 		if (player.getY() + player.getHeight() > 600) {
+			if (!onCoolDown) {
+				onCoolDown = true;
+				player.hit();
+				lastHit = tick;
+				if (player.getHealth() <= 0) {
+					screen = new GameOver();
+					current = CurrentScreen.GAMEOVER;
+				}
+			} else if (tick - lastHit > 100) {
+				onCoolDown = false;
+
+			}
 			player.setLoc(player.getX(), 600 - player.getHeight());
 		}
 	}
 
+	public static boolean getCoolDown() {
+		return onCoolDown;
+	}
 }

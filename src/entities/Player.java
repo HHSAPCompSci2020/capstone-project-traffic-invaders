@@ -1,6 +1,7 @@
 package entities;
 
 import processing.core.PApplet;
+import structure.Game;
 
 /**
  * Represents the vehicle which the player is
@@ -34,26 +35,6 @@ public class Player extends Entity {
 
 	@Override
 	public void act() {
-//		if(up && right) {
-//			if()
-//			disY -= velDiag;
-//			disX += velDiag;
-//		}else if(up && left) {
-//			disY -= velDiag;
-//			disX -= velDiag;
-//		}else if(down && right) {
-//			disY += velDiag;
-//			disX += velDiag;
-//		}else if(down && left) {
-//			disY += velDiag;
-//			disX -= velDiag;
-//		}else if(up) {
-//			disY -= velocity;s
-//		}else if(right) {
-//			disX += velocity;
-//		}else if(left) {
-//			disX -= velocity;
-//		}
 		if (right != left) {
 			if (velocity + Math.abs(disX) < maxVelocity) {
 				if (right) {
@@ -92,8 +73,20 @@ public class Player extends Entity {
 	@Override
 	public void draw(PApplet g) {
 		g.pushMatrix();
-		g.fill(0, 255, 255);
+		if(Game.getCoolDown()) {
+			g.fill(0,0,0);
+		}else {
+			g.fill(0, 255, 255);
+		}
+		
 		g.rect(getX(), getY(), getWidth(), getHeight());
+		
+		
+		
+		g.fill(255, 255, 255);
+		g.rect(getX() - 10, getY() + getHeight() + 10, getWidth() + 20, 10);
+		g.fill(0, 255, 0);
+		g.rect(getX() - 10, getY() + getHeight() + 10, (int) ((getWidth() + 20) * ((double) getHealth() / 3.0)), 10);
 		g.popMatrix();
 	}
 	public int getHealth() {
