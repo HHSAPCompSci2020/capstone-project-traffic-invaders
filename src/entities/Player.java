@@ -73,14 +73,13 @@ public class Player extends Entity {
 	@Override
 	public void draw(PApplet g) {
 		g.pushMatrix();
-		if(Game.getCoolDown()) {
-			g.fill(0,0,0);
-		}else {
-			g.fill(0, 255, 255);
-		}
 		
+		g.fill(0, 255, 255);
 		g.rect(getX(), getY(), getWidth(), getHeight());
-		
+		if(Game.getCoolDown()) {
+			g.fill(255, 0, 0);
+			g.rect(getX(), getY(), getWidth(), getHeight());
+		}
 		
 		
 		g.fill(255, 255, 255);
