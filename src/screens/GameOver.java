@@ -16,14 +16,12 @@ import processing.core.PApplet;
  */
 public class GameOver extends Screen {
 
-	/**
-	 * Will initialize variables here later on
-	 */
+
 	public GameOver() {
 	}
 
 	/**
-	 * Draws the main menu on the drawing surface
+	 * Draws the game over on the drawing surface
 	 * 
 	 * @param PApplet g - A PApplet object which sets the main menu
 	 */
