@@ -14,8 +14,15 @@ public class Player extends Entity {
 	private boolean left, right, up, down;
 	private int velocity, velDiag, maxVelocity, friction;
 	private int health; 
+
 	
-	
+	/**
+	 * Constructs the player.
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
+	 */
 	public Player(int x, int y, int width, int height) {
 
 		super(x, y, width, height);
