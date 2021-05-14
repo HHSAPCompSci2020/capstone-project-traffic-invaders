@@ -34,6 +34,8 @@ public class MainMenu extends Screen {
 		g.text("MAINMENU", g.width / 2 - g.textWidth("MAINMENU") / 2, g.height / 2);
 		g.fill(255, 255, 255);
 		g.rect(g.width / 2 - 50, g.height / 2 + 20, 100, 30);
+		g.fill(0, 102, 0);
+		g.text("Start Game", g.width / 2 - g.textWidth("Stargame") / 2, g.height / 2 + 40);
 
 	}
 
