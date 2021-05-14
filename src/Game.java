@@ -19,13 +19,19 @@ public class Game extends PApplet{
 	
 	private Background b;
 	
+	public static CurrentScreen current; 
+	
+	private enum CurrentScreen {
+		MENU, GAME;
+	}
+
 	private static Player player;
 	/**
 	 * The setup method sets up the game panel for play with the MainMenu screen.
 	 */
 	public void setup() {
-		player = new Player(width / 2, height - 50, 50 , 75);
-		screen = new MainGame(player);
+		current = CurrentScreen.MENU;
+		screen = new MainMenu();
 		surface.setSize(800,600);
 		surface.setResizable(true);
 
@@ -36,17 +42,34 @@ public class Game extends PApplet{
 	 * The draw method in game draws the screens and everything that is displayed on the window
 	 */
 	public void draw() {
-//		background(0,0,0);
-//		screen.draw(this);
-//		screen.update();
+		if(current == CurrentScreen.GAME) {
+			b.draw(this);
+			player.draw(this);
+			player.act();
+
+		}
+
 		
-		b.draw(this);
+
 		screen.draw(this);
 		screen.update();
-		player.draw(this);
-		player.act();
+
 	
+		
 	}
+	
+	public void mousePressed() {
+		int type = MainMenu.clicked(mouseX, mouseY);
+		if(current == CurrentScreen.MENU) {
+			if(type == 1) {
+				player = new Player(width / 2, height - 50, 50 , 75);
+				screen = new MainGame(player);
+				current = CurrentScreen.GAME;
+			}
+		}
+	}
+	
+	
 	public void keyPressed() {
 		if(key == 'a') {
 			player.setLeft(true);
