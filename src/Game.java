@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+
 import backgrounds.Background;
 import backgrounds.NormalRoad;
+import entities.Entity;
 import entities.Player;
 import processing.core.PApplet;
 import screens.MainGame;
@@ -33,7 +36,7 @@ public class Game extends PApplet{
 		current = CurrentScreen.MENU;
 		screen = new MainMenu();
 		surface.setSize(800,600);
-		surface.setResizable(true);
+		surface.setResizable(false);
 
 		b = new NormalRoad();
 	}
@@ -46,6 +49,7 @@ public class Game extends PApplet{
 			b.draw(this);
 			player.draw(this);
 			player.act();
+			collision(player);
 
 		}
 
@@ -91,6 +95,24 @@ public class Game extends PApplet{
 		}else if(key == 'd') {
 			player.setRight(false);
 		}
+	}
+	public void collision(Player player) {
+		 ArrayList<Entity> entities = MainGame.getEntities();
+		 for(Entity e : entities) {
+			 
+		 }
+		 if(player.getX() < Background.getFirstLineX()) {
+			 player.setLoc(Background.getFirstLineX(), player.getY());
+		 }
+		 if(player.getX() + player.getWidth() > Background.getSecondLineX()) {
+			 player.setLoc(Background.getSecondLineX() - player.getWidth() , player.getY());
+		 }
+		 if(player.getY() < 0) {
+			 player.setLoc(player.getX(), 0);
+		 }
+		 if(player.getY() + player.getHeight() > 600) {
+			 player.setLoc(player.getX(), 600 - player.getHeight());
+		 }
 	}
 	
 }

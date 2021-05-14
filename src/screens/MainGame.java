@@ -10,7 +10,7 @@ import processing.core.PApplet;
 
 	
 public class MainGame extends Screen{
-	private ArrayList<Entity> entities;
+	private static ArrayList<Entity> entities;
 	
 	private int tick;
 	public MainGame(Player x) {
@@ -37,5 +37,7 @@ public class MainGame extends Screen{
 			e.act();
 		}
 	}
-
+	public static ArrayList<Entity> getEntities(){
+		return entities;
+	}
 }
