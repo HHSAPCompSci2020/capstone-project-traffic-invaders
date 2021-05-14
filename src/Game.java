@@ -73,26 +73,30 @@ public class Game extends PApplet {
 	}
 
 	public void keyPressed() {
-		if (key == 'a') {
-			player.setLeft(true);
-		} else if (key == 's') {
-			player.setDown(true);
-		} else if (key == 'w') {
-			player.setUp(true);
-		} else if (key == 'd') {
-			player.setRight(true);
+		if (current == CurrentScreen.GAME) {
+			if (key == 'a') {
+				player.setLeft(true);
+			} else if (key == 's') {
+				player.setDown(true);
+			} else if (key == 'w') {
+				player.setUp(true);
+			} else if (key == 'd') {
+				player.setRight(true);
+			}
 		}
 	}
 
 	public void keyReleased() {
-		if (key == 'a') {
-			player.setLeft(false);
-		} else if (key == 's') {
-			player.setDown(false);
-		} else if (key == 'w') {
-			player.setUp(false);
-		} else if (key == 'd') {
-			player.setRight(false);
+		if (current == CurrentScreen.GAME) {
+			if (key == 'a') {
+				player.setLeft(false);
+			} else if (key == 's') {
+				player.setDown(false);
+			} else if (key == 'w') {
+				player.setUp(false);
+			} else if (key == 'd') {
+				player.setRight(false);
+			}
 		}
 	}
 
