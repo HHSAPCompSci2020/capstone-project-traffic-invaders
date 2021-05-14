@@ -1,5 +1,6 @@
 package entities;
 
+import backgrounds.NormalRoad;
 import processing.core.PApplet;
 
 /**
@@ -18,7 +19,7 @@ public class Car extends Entity
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
-		setLoc(getX(), getY() + 2);
+		setLoc(getX(), getY() + ((int) NormalRoad.getScrollRate()) / 100);
 	}
 
 	@Override

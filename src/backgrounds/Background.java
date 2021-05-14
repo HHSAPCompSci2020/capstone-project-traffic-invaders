@@ -58,6 +58,7 @@ public class Background
 		s.line(firstLineX, 0, firstLineX, s.height);
 		s.line(secondLineX, 0, secondLineX, s.height);	
 	}
+	//For getting the lines in other classes.
 	public static int getFirstLineX() {
 		return firstLineX;
 	}
