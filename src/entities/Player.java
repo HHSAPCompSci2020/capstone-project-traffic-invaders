@@ -11,7 +11,7 @@ import processing.core.PApplet;
 public class Player extends Entity {
 	private int disX, disY;
 	private boolean left, right, up, down;
-	private int velocity, velDiag, maxVelocity;
+	private int velocity, velDiag, maxVelocity, friction;
 
 	public Player(int x, int y, int width, int height) {
 
@@ -22,8 +22,9 @@ public class Player extends Entity {
 		right = false;
 		up = false;
 		down = false;
-		velocity = 2;
-		maxVelocity = 5;
+		velocity = 4;
+		maxVelocity = 8;
+		friction = 2;
 		velDiag = (int) (Math.pow(2.0, (0.5)) / 2) * velocity;
 	}
 	// public player()
@@ -71,16 +72,16 @@ public class Player extends Entity {
 		System.out.println("Right: " + right +"   left: " + left + "    Up: " + up + "   down: " + down);
 		setLoc(getX() + disX, getY() + disY);
 		if(disY > 1) {
-			disY -= velocity;
+			disY -= friction;
 		}
 		if(disY < 1) {
-			disY += velocity;
+			disY += friction;
 		}
 		if(disX > 0) {
-			disX -= velocity;
+			disX -= friction;
 		}
 		if(disX < 0) {
-			disX += velocity;
+			disX += friction;
 		}
 
 	}
