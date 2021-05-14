@@ -15,6 +15,7 @@ public class Background
 	private int r, g, b;
 	private static int firstLineX;
 	private static int secondLineX;
+	
 	/**
 	 * Sets the amount of times draw() has run, the time passed, and the difficulty factor, and gets colors 
 	 * @param r the red color value
@@ -59,13 +60,29 @@ public class Background
 		s.line(firstLineX, 0, firstLineX, s.height);
 		s.line(secondLineX, 0, secondLineX, s.height);	
 	}
-	//For getting the lines in other classes.
-	public static int getFirstLineX() {
+
+	/**
+	 * Gets the coordinates of the first line
+	 * @return firstLineX
+	 */
+	public static int getFirstLineX() 
+	{
 		return firstLineX;
 	}
-	public static int getSecondLineX() {
+	
+	/**
+	 * Gets the coordinates of the second line
+	 * @return secondLineX
+	 */
+	public static int getSecondLineX() 
+	{
 		return secondLineX;
 	}
+	
+	/**
+	 * Gets the speed of the screen
+	 * @return time
+	 */
 	public float getSpeed()
 	{
 		return time;

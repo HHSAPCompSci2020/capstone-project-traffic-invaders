@@ -9,10 +9,11 @@ import processing.core.PApplet;
  */
 public class NormalRoad extends Background
 {
+	private static float scrollRate;
+	
 	/**
 	 * Passes the rgb color value to the superclass constructor
 	 */
-	private static float scrollRate;
 	public NormalRoad()
 	{
 		super(100, 100, 100);
@@ -48,6 +49,11 @@ public class NormalRoad extends Background
 			difficulty++;
 		}
 	}
+	
+	/**
+	 * Gets the scroll rate of the screen
+	 * @return scrollRate
+	 */
 	public static float getScrollRate() {
 		return scrollRate;
 	}
