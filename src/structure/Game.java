@@ -77,8 +77,11 @@ public class Game extends PApplet {
 			}
 		}
 	}
+
 	/**
-	 * This method when in the game screen will set the boolean variable of the direction of movement that is entered by the user as true when a "wasd" key is pressed.
+	 * This method when in the game screen will set the boolean variable of the
+	 * direction of movement that is entered by the user as true when a "wasd" key
+	 * is pressed.
 	 */
 	public void keyPressed() {
 		if (current == CurrentScreen.GAME) {
@@ -93,8 +96,11 @@ public class Game extends PApplet {
 			}
 		}
 	}
+
 	/**
-	 * This method when in the game screen will set the boolean variable of the direction of movement that is released by the user as false when a "wasd" key is released.
+	 * This method when in the game screen will set the boolean variable of the
+	 * direction of movement that is released by the user as false when a "wasd" key
+	 * is released.
 	 */
 	public void keyReleased() {
 		if (current == CurrentScreen.GAME) {
@@ -109,9 +115,13 @@ public class Game extends PApplet {
 			}
 		}
 	}
+
 	/**
-	 * This method handles all the collisions between the player and the incoming cars. After being hit it also implements a cool down or invulnerability period. This method also prevents the player from leaving the road
-	 * @param player the main user. ability
+	 * This method handles all the collisions between the player and the incoming
+	 * cars. After being hit it also implements a cool down or invulnerability
+	 * period. This method also prevents the player from leaving the road
+	 * 
+	 * @param player the main user.
 	 */
 	public void collision(Player player) {
 		tick++;
