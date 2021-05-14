@@ -41,6 +41,7 @@ public class Background
 	{
 		s.background(r, g, b);
 		time++;
+		s.text("Score: " + getSpeed(), s.width/16, s.height/12);
 		scroll(s);
 	}
 	
