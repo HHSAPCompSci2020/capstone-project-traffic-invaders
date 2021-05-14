@@ -99,7 +99,12 @@ public class Game extends PApplet{
 	public void collision(Player player) {
 		 ArrayList<Entity> entities = MainGame.getEntities();
 		 for(Entity e : entities) {
-			 
+			 if(e instanceof Player) {
+				 continue;
+			 }
+			 if(player.isPointInside(e.getX(), e.getY()) || player.isPointInside(e.getX() + e.getWidth(), e.getY()) || player.isPointInside(e.getX(), e.getY() + e.getHeight()) || player.isPointInside(e.getX() + e.getWidth(), e.getY() + e.getHeight())) {
+				 System.out.println("collided");
+			 }
 		 }
 		 if(player.getX() < Background.getFirstLineX()) {
 			 player.setLoc(Background.getFirstLineX(), player.getY());

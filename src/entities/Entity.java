@@ -22,8 +22,13 @@ public abstract class Entity {
 
 	public abstract void draw(PApplet g);
 	
-	//getters and setters Hooray!!!!
-	
+	public boolean isPointInside(int x, int y) {
+		if ((getX() < x && x < getX() + width) && (this.getY() < y && y < (getY() + height))) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	public int getX(){
 		return x; 
 	}

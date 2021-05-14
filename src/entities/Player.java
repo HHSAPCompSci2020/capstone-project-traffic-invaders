@@ -69,7 +69,7 @@ public class Player extends Entity {
 				}
 			}
 		}
-		System.out.println("Right: " + right +"   left: " + left + "    Up: " + up + "   down: " + down);
+		//System.out.println("Right: " + right +"   left: " + left + "    Up: " + up + "   down: " + down);
 		setLoc(getX() + disX, getY() + disY);
 		if(disY > 1) {
 			disY -= friction;
