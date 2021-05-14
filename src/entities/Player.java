@@ -80,8 +80,13 @@ public class Player extends Entity {
 			g.fill(255, 0, 0);
 			g.rect(getX(), getY(), getWidth(), getHeight());
 		}
+		g.fill(0, 0, 0);
+		g.rect(getX() - 5, getY() + 10, 5, 20);
+		g.rect(getX() + getWidth(), getY() + 10, 5, 20);
 		
-		
+		g.rect(getX() - 5, getY() + getHeight() - 30, 5, 20);
+		g.rect(getX() + getWidth(), getY() + getHeight() - 30, 5, 20);
+		//health bar
 		g.fill(255, 255, 255);
 		g.rect(getX() - 10, getY() + getHeight() + 10, getWidth() + 20, 10);
 		g.fill(0, 255, 0);

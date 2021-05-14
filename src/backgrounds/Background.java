@@ -9,7 +9,7 @@ import processing.core.PApplet;
  */
 public class Background 
 {
-	float time;
+	static float time;
 	float difficulty;
 	int runs;
 	private int r, g, b;
@@ -83,7 +83,7 @@ public class Background
 	 * Gets the speed of the screen
 	 * @return time
 	 */
-	public float getSpeed()
+	public static float getSpeed()
 	{
 		return time;
 	}
