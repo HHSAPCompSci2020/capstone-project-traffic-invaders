@@ -67,6 +67,10 @@ public class Game extends PApplet {
 
 	}
 
+	/**
+	 * The mousePressed method detecs when the mouse is pressed and checks whether
+	 * to switch the screen and start the game
+	 */
 	public void mousePressed() {
 		int type = MainMenu.clicked(mouseX, mouseY);
 		if (current == CurrentScreen.MENU) {
