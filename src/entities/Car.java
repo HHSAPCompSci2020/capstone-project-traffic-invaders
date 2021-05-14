@@ -28,6 +28,12 @@ public class Car extends Entity
 		g.pushMatrix();
 		//g.fill(0, 255, 255);
 		g.rect(getX(), getY(), getWidth(), getHeight());
+		g.fill(0, 0, 0);
+		g.rect(getX() - 5, getY() + 10, 5, 20);
+		g.rect(getX() + getWidth(), getY() + 10, 5, 20);
+		
+		g.rect(getX() - 5, getY() + getHeight() - 30, 5, 20);
+		g.rect(getX() + getWidth(), getY() + getHeight() - 30, 5, 20);
 		g.popMatrix();
 	}
 	
