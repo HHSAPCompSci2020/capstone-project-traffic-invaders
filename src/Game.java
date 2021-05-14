@@ -24,7 +24,7 @@ public class Game extends PApplet{
 	 * The setup method sets up the game panel for play with the MainMenu screen.
 	 */
 	public void setup() {
-		player = new Player(50,50,50, 50);
+		player = new Player(width / 2, height - 50, 50 , 75);
 		screen = new MainGame(player);
 		surface.setSize(800,600);
 		surface.setResizable(true);
