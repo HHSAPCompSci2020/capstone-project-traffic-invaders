@@ -9,10 +9,10 @@ import processing.core.PImage;
  * @author Eric Decasper
  * @version 1.0
  */
-public class Car extends Entity
+public class SemiTruck extends Entity
 {
 	private PImage img;
-	public Car(int x, int y, int width, int height) {
+	public SemiTruck(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 	}
@@ -33,7 +33,7 @@ public class Car extends Entity
 	@Override
 	public void draw(PApplet g) {
 		// TODO Auto-generated method stub
-		img = g.loadImage("car1.png");
+		img = g.loadImage("semiTruck.png");
 		g.image(img, getX(), getY(), getWidth(), getHeight() + 10);
 
 	}

@@ -6,6 +6,7 @@ import backgrounds.Background;
 import entities.Car;
 import entities.Entity;
 import entities.Player;
+import entities.SemiTruck;
 import processing.core.PApplet;
 
 	
@@ -41,12 +42,26 @@ public class MainGame extends Screen{
 		tick++;
 
 		if(tick % 50 == 0) {
-			entities.add(new Car((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX()) - 50) + Background.getFirstLineX() + 50, -75, 50, 75));
+			if(Math.random() * 5 > 3) {
+				entities.add(new SemiTruck((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX()) - 100) + Background.getFirstLineX() + 50, -125, 50, 125));
+			}else {
+				entities.add(new Car((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX()) - 100) + Background.getFirstLineX() + 50, -75, 50, 75));
+			}
+			
+			
 		}
-		
+		ArrayList<Entity> rem = new ArrayList<>();
 		for (Entity e : entities) {
+			if(e.getY() > 800) {
+				rem.add(e);
+			}
 			e.act();
 		}
+	
+        for (Entity e : rem) {
+            entities.remove(e);
+        }
+        rem.clear();
 	}
 	/**
 	 * The remove method removes the entity passed in from the array list
