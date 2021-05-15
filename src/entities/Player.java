@@ -1,6 +1,7 @@
 package entities;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 import structure.Game;
 
 /**
@@ -14,11 +15,12 @@ public class Player extends Entity {
 	private boolean left, right, up, down;
 	private int velocity, velDiag, maxVelocity, friction;
 	private int health; 
-	
+	private PImage img;
 	
 	public Player(int x, int y, int width, int height) {
-
+		
 		super(x, y, width, height);
+		
 		health = 3;
 		disX = 0;
 		disY = 1;
@@ -31,8 +33,7 @@ public class Player extends Entity {
 		friction = 2;
 		velDiag = (int) (Math.pow(2.0, (0.5)) / 2) * velocity;
 	}
-	// public player()
-
+	
 	@Override
 	public void act() {
 		if (right != left) {
@@ -72,21 +73,26 @@ public class Player extends Entity {
 
 	@Override
 	public void draw(PApplet g) {
+		img = g.loadImage("player1.png");
+		
 		g.pushMatrix();
 		
 		g.fill(0, 255, 255);
-		g.rect(getX(), getY(), getWidth(), getHeight());
-		if(Game.getCoolDown()) {
-			g.fill(255, 0, 0);
-			g.rect(getX(), getY(), getWidth(), getHeight());
-		}
-		g.fill(0, 0, 0);
-		g.rect(getX() - 5, getY() + 10, 5, 20);
-		g.rect(getX() + getWidth(), getY() + 10, 5, 20);
-		
-		g.rect(getX() - 5, getY() + getHeight() - 30, 5, 20);
-		g.rect(getX() + getWidth(), getY() + getHeight() - 30, 5, 20);
-		//health bar
+		g.tint(255, 255, 255);
+		g.image(img, getX(), getY(), getWidth(), getHeight() + 10);
+		//g.rect(getX(), getY(), getWidth(), getHeight());
+//		if(Game.getCoolDown()) {
+//			g.tint(255, 0 ,0);
+////			g.fill(255, 0, 0);
+////			g.rect(getX(), getY(), getWidth(), getHeight());
+//		}
+//		g.fill(0, 0, 0);
+//		g.rect(getX() - 5, getY() + 10, 5, 20);
+//		g.rect(getX() + getWidth(), getY() + 10, 5, 20);
+//		
+//		g.rect(getX() - 5, getY() + getHeight() - 30, 5, 20);
+//		g.rect(getX() + getWidth(), getY() + getHeight() - 30, 5, 20);
+//		//health bar
 		g.fill(255, 255, 255);
 		g.rect(getX() - 10, getY() + getHeight() + 10, getWidth() + 20, 10);
 		g.fill(0, 255, 0);
