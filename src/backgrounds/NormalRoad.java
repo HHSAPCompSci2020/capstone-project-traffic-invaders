@@ -41,9 +41,13 @@ public class NormalRoad extends Background
 		{
 			s.fill(255,255,255);
 			scrollRate = time;
+			
+			//draws rectangle at middle of screen
+			//draws rectangle at time (including difficulty consideration) + (-amount of dividers * )
 			s.rect(s.width/2 - s.width/40, -i * 3 * s.height/20 + scrollRate, s.width/40, s.height/20);
 		}
 		
+		//difficulty increases every 30 seconds, 1800 calls
 		if(runs % 1800 == 0)
 		{
 			difficulty++;

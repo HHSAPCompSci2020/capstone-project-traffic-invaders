@@ -17,12 +17,19 @@ public class Car extends Entity
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * The act method handles all the movement of the car moving the cars down the road at the specified rate.
+	 */
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
 		setLoc(getX(), getY() + ((int) NormalRoad.getScrollRate()) / 100);
 	}
 
+	/**
+	 * The draw method draws the car with all its attributes.
+	 * @param g the PApplet object passed into the method.
+	 */
 	@Override
 	public void draw(PApplet g) {
 		// TODO Auto-generated method stub
@@ -34,10 +41,10 @@ public class Car extends Entity
 //		g.fill(0, 0, 0);
 //		g.rect(getX() - 5, getY() + 10, 5, 20);
 //		g.rect(getX() + getWidth(), getY() + 10, 5, 20);
-//		
+//
 //		g.rect(getX() - 5, getY() + getHeight() - 30, 5, 20);
 //		g.rect(getX() + getWidth(), getY() + getHeight() - 30, 5, 20);
 		//g.popMatrix();
 	}
-	
+
 }

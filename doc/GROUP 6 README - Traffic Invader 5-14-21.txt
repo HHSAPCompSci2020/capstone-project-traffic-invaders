@@ -78,7 +78,6 @@ Must-have Features:
 * Main Game Screen: This is the main game screen where users (players) navigate through traffic. This feature encompasses the display element of the game.
 * Pause/Restart: This must have feature allows users to pause in the middle of their game and even restart without having to return to the main menu.
 * Infinite Obstacle Generation: We would like the game to continue on forever. This feature will implement infinite obstacle generation so that the user never reaches a certain “end” to the game. Instead, their goal is to get the highest score.
-* Power Ups: To add some more “pizzazz” to our game, we would add additional power ups which can be picked up on the interstate. Some examples include score boosts, shields from obstacles, and increased speed.
 * Initial Menu: We would like to implement a separate, modern initial menu to display game options to customize and run the game.
 * Life System: In order to add a little flair into our game, we would like to implement a life system based on how many collisions you can take and an invulnerability period after a certain collision.
 
@@ -112,9 +111,16 @@ Class List:
 
 
 Game.java: Extends PApplet. Runs the main game loop. 
+Runner.java: Runs the program
+
+
+GameOver.java: Displays the game over screen
+MainGame.java: Is the main screen of the game
+MainMenu: Displays the main screen when the user launches the game
+Screen: Superclass for GameOver, MainGame, and MainMenu
+
+
 Car.java: Represents the incoming cars or obstacles.
-
-
 Player.java: Represents the player – a.k.a a car.
 Entity.java: The superclass of Car and Player.
 
@@ -122,29 +128,37 @@ Entity.java: The superclass of Car and Player.
 BackGroundManager.java: Manages variety of backgrounds. Picks and displays them.
 BackGround.java: Superclass of all backgrounds
 NormalRoad.java: Default background of program
-DoubleRoad.java Same as NormalRoad, except has two lane dividers
+DoubleRoad.java: Same as NormalRoad.java except with extra lanes
 Sound.java : Handles music and sound elements
 
 
 Credits:
 Eric Decasper: 
-MainMenu.java: the main menu screen,
-Car.java: Represents the incoming cars or obstacles.
-Player.java: Represents the player also a car.
+Game.java: Worked on collisions and what should happen when objects collide inside the game.
 Entity.java: The superclass of Car and Player.
+Car.java: Programmed the entire player class.
+Player.java: Programmed the entire player class.
+
+
+
 
 Karan Dalal: 
-Game.java: Extends PApplet. Has the main game loop.
-Runner.java: runs the program.
- 
+ Game.java: Programmed the setup method and currentScreen method. As Well as mouse pressed
+GameOver.java: Programmed the entire GameOver screen.
+MainMenu.java: Programmed the entire main menu screen
+
+
 Vikram:
 BackGroundManager.java: manages backgrounds. Picks and displayed them
 BackGround.java: Superclass of all backgrounds
 NormalRoad.java: default background.
-DoubleRoad.java: Same as NormalRoad, except has two lane dividers
-Screen.java: the superclass of all screens
+DoubleRoad.java: same as NormalRoad.java except with extra lanes
+Sound.java : handles music and sound effects
 
 
+External Credits:
+Dan Decasper: My dad helped me with a couple syntax errors and debugging.
+Sam Leistiko: Friend outside of class helped with our project structure, collisions, and some player movement.
 
 
 [a]I saw this was stated later on, but I think it would also be worth mentioning that the game can be replayed here as well.

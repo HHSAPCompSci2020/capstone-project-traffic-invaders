@@ -1,9 +1,5 @@
 package screens;
 
-import java.util.ArrayList;
-
-import javax.swing.JButton;
-
 import processing.core.PApplet;
 
 /**
@@ -46,6 +42,12 @@ public class MainMenu extends Screen {
 
 	}
 
+	/**
+	 * @param mouseX - the x coordinate of the click
+	 * @param mouseY - the y coordinate of the click
+	 * The clicked method checks if the click was within the button
+	 * area, and returns 1 if it is.
+	 */
 	public static int clicked(int mouseX, int mouseY) {
 		if (mouseX >  350 && mouseX < 450 && mouseY > 320 && mouseY < 350) {
 			return 1;
