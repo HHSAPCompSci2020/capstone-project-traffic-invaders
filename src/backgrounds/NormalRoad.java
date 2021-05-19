@@ -9,15 +9,12 @@ import processing.core.PApplet;
  */
 public class NormalRoad extends Background
 {
-	private static float scrollRate;
-	
 	/**
 	 * Passes the rgb color value to the superclass constructor
 	 */
 	public NormalRoad()
 	{
 		super(100, 100, 100);
-		scrollRate = 0;
 	}
 	
 	/**
@@ -37,28 +34,21 @@ public class NormalRoad extends Background
 	{
 		super.scroll(s);
 		
-		for(int i = 0; i <= 1000; i++)
+		for(int i = 0; i <= 6; i++)
 		{
+			if(time >= s.height)
+			{
+				time -= s.height/5;
+			}
+
 			s.fill(255,255,255);
-			scrollRate = time;
 			
-			//draws rectangle at middle of screen
-			//draws rectangle at time (including difficulty consideration) + (-amount of dividers * )
-			s.rect(s.width/2 - s.width/40, -i * 3 * s.height/20 + scrollRate, s.width/40, s.height/20);
+			s.rect(s.width/2 - s.width/40, -i * 3 * s.height/20 + time, s.width/40, s.height/20);
 		}
 		
-		//difficulty increases every 30 seconds, 1800 calls
 		if(runs % 1800 == 0)
 		{
 			difficulty++;
 		}
-	}
-	
-	/**
-	 * Gets the scroll rate of the screen
-	 * @return scrollRate
-	 */
-	public static float getScrollRate() {
-		return scrollRate;
 	}
 }

@@ -32,7 +32,7 @@ public class GameOver extends Screen {
 		g.textSize(40);
 		g.text("Game Over", g.width / 2 - g.textWidth("Game Over") / 2, 200);
 		g.textSize(20);
-		g.text("You final Score Was: " + Background.getSpeed(), g.width / 2 - g.textWidth("You final Score Was: " + + Background.getSpeed())/2, g.height / 2 + 20);
+		g.text("You final Score Was: " + Background.getScore(), g.width / 2 - g.textWidth("You final Score Was: " + + Background.getSpeed())/2, g.height / 2 + 20);
 		
 	}
 

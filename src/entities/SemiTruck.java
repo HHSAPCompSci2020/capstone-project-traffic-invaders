@@ -1,6 +1,6 @@
 package entities;
 
-import backgrounds.NormalRoad;
+import backgrounds.Background;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -23,7 +23,7 @@ public class SemiTruck extends Entity
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
-		setLoc(getX(), getY() + ((int) NormalRoad.getScrollRate()) / 100);
+		setLoc(getX(), getY() + ((int) Background.getSpeed()) / 50);
 	}
 
 	/**

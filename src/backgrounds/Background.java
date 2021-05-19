@@ -10,7 +10,8 @@ import processing.core.PApplet;
 public class Background 
 {
 	static float time;
-	float difficulty;
+	static int score;
+	static int difficulty;
 	int runs;
 	
 	private int r, g, b;
@@ -26,6 +27,7 @@ public class Background
 	 */
 	public Background(int r, int g, int b)
 	{
+		score = 0;
 		runs = 0;
 		time = 0;
 		difficulty = 1;
@@ -48,8 +50,9 @@ public class Background
 		
 		//every time draw() is called time increases
 		time++;
+		score++;
 		
-		s.text("Score: " + getSpeed(), s.width/16, s.height/12);
+		s.text("Score: " + score, s.width/16, s.height/12);
 		
 		scroll(s);
 	}
@@ -60,10 +63,8 @@ public class Background
 	 */
 	public void scroll(PApplet s)
 	{		
-		//every time scroll() is called runs increases 
 		runs++;
 		
-		//difficulty is added to time every scroll() call
 		time += difficulty;
 		
 		firstLineX = s.width/5;
@@ -98,5 +99,15 @@ public class Background
 	public static float getSpeed()
 	{
 		return time;
+	}
+	
+	public static int getDifficulty()
+	{
+		return difficulty;
+	}
+	
+	public static int getScore()
+	{
+		return score;
 	}
 }
