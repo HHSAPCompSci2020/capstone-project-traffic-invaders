@@ -23,7 +23,7 @@ public class Car extends Entity
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
-		setLoc(getX(), getY() + ((int) Background.getSpeed()) / 50);
+		setLoc(getX(), getY() + ((int) Background.getSpeed()) / 40);
 //		setLoc(getX(), getY() + (int)(-NormalRoad.getB() * 3 * getHeight() + NormalRoad.getScrollRate()));		
 	}
 

@@ -35,10 +35,10 @@ public class NormalRoad extends Background
 		super.scroll(s);
 		
 		for(int i = 0; i <= 6; i++)
-		{
+		{	
 			if(time >= s.height)
 			{
-				time -= s.height/5;
+				time -= 3 * s.height/20;
 			}
 
 			s.fill(255,255,255);
