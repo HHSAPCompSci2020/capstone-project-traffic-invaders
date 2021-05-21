@@ -3,10 +3,7 @@ package screens;
 import java.util.ArrayList;
 
 import backgrounds.Background;
-import entities.Car;
-import entities.Entity;
-import entities.Player;
-import entities.SemiTruck;
+import entities.*;
 import processing.core.PApplet;
 
 	

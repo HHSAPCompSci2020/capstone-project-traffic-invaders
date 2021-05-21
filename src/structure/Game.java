@@ -1,18 +1,10 @@
 package structure;
 
 import java.util.ArrayList;
-
-import backgrounds.Background;
-import backgrounds.CountryRoad;
-import backgrounds.DesertRoad;
-import backgrounds.NormalRoad;
-import entities.Entity;
-import entities.Player;
+import backgrounds.*;
+import entities.*;
 import processing.core.PApplet;
-import screens.GameOver;
-import screens.MainGame;
-import screens.MainMenu;
-import screens.Screen;
+import screens.*;
 
 /**
  * The Game class represents the actual game panel where the game is played on
@@ -36,7 +28,7 @@ public class Game extends PApplet {
 	}
 
 	private static Player player;
-
+	
 	/**
 	 * The setup method sets up the game panel for play with the MainMenu screen.
 	 */
@@ -47,8 +39,8 @@ public class Game extends PApplet {
 		screen = new MainMenu();
 		surface.setSize(800, 600);
 		surface.setResizable(false);
-
-		b = new CountryRoad();
+		
+		b = BackgroundManager.chooseBackground();
 	}
 
 	/**
