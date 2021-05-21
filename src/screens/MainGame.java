@@ -28,8 +28,8 @@ public class MainGame extends Screen{
 	 */
 	@Override
 	public void draw(PApplet g) {
+		
 		for (Entity e : entities) {
-			g.fill(255, 102, 0);
 			e.draw(g);
 		}
 	}
