@@ -3,7 +3,8 @@ package structure;
 import java.util.ArrayList;
 
 import backgrounds.Background;
-import backgrounds.DoubleRoad;
+import backgrounds.CountryRoad;
+import backgrounds.DesertRoad;
 import backgrounds.NormalRoad;
 import entities.Entity;
 import entities.Player;
@@ -47,7 +48,7 @@ public class Game extends PApplet {
 		surface.setSize(800, 600);
 		surface.setResizable(false);
 
-		b = new NormalRoad();
+		b = new CountryRoad();
 	}
 
 	/**
