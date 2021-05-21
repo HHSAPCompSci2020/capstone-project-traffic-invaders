@@ -35,13 +35,12 @@ public class MainMenu extends Screen {
 		g.textFont(font);
 		bg = g.loadImage("lib/background.png");
 		g.background(bg);
-		g.pushStyle(); // Issue with push / pop - background getting blur :(
+		g.pushStyle(); 
 		g.fill(74, 134, 232);
 		g.textSize(43);
 		g.text("Traffic", g.width / 2 - g.textWidth("Traffic") / 2, 105);
 		g.text("Invaders", g.width / 2 - g.textWidth("Invaders") / 2, 155);
-		g.filter(PConstants.BLUR, 2);
-		g.popStyle(); // Issue with push / pop - background getting blur :(
+		g.popStyle(); 
 		g.fill(255, 255, 255);
 		g.textSize(40);
 		g.text("Traffic", g.width / 2 - g.textWidth("Traffic") / 2, 100);
