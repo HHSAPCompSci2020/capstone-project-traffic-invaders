@@ -30,6 +30,7 @@ public class MainMenu extends Screen {
 	 * @param PApplet g - A PApplet object which sets the main menu
 	 */
 	public void draw(PApplet g) {
+		g.push();
 		font = g.createFont("lib/font.ttf", 40);
 		g.textFont(font);
 		bg = g.loadImage("lib/background.png");
@@ -52,6 +53,7 @@ public class MainMenu extends Screen {
 		g.fill(255, 255, 255);
 		g.textSize(20);
 		g.text("Start", g.width / 2 - g.textWidth("Start") / 2, 235);
+		g.pop();
 
 	}
 
