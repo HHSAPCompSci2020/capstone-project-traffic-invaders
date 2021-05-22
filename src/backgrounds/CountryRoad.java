@@ -2,19 +2,14 @@ package backgrounds;
 
 import processing.core.PApplet;
 
-/**
- * Normal Road, except with two lane dividers
- * @author Vikram
- * @version 1.0
- */
-public class DoubleRoad extends Background
+public class CountryRoad extends Background
 {
 	/**
 	 * Passes the rgb color value to the superclass constructor
 	 */
-	public DoubleRoad()
+	public CountryRoad()
 	{
-		super(194, 178, 128);
+		super(19,109,21);
 	}
 	
 	/**
@@ -31,15 +26,24 @@ public class DoubleRoad extends Background
 	 * @param s PApplet object
 	 */
 	public void scroll(PApplet s)
-	{
+	{	
 		super.scroll(s);
-		
-		for(int i = 0; i <= 1000; i++)
-		{
-			s.rect(2 * s.width/5 - s.width/40, -i * 3 * s.height/20 + time, s.width/40, s.height/20);
-			s.rect(3 * s.width/5 - s.width/40, -i * 3 * s.height/20 + time, s.width/40, s.height/20);
+
+		s.fill(255,255,255);
+		s.rect(s.width/2 - s.width/40 - s.width/80, 0, s.width/40, s.height);
+
+		for(int i = 0; i <= 6; i++)
+		{	
+			if(time >= s.height)
+			{
+				time -= 3 * s.height/20;
+			}
+
+			s.fill(255,255,255);
+				
+			s.rect(s.width/2 - s.width/40 + s.width/80, -i * 3 * s.height/20 + time, s.width/40, s.height/20);			
 		}
-		
+			
 		if(runs % 1800 == 0)
 		{
 			difficulty++;

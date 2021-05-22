@@ -3,10 +3,7 @@ package screens;
 import java.util.ArrayList;
 
 import backgrounds.Background;
-import entities.Car;
-import entities.Entity;
-import entities.Player;
-import entities.SemiTruck;
+import entities.*;
 import processing.core.PApplet;
 
 	
@@ -28,8 +25,8 @@ public class MainGame extends Screen{
 	 */
 	@Override
 	public void draw(PApplet g) {
+		
 		for (Entity e : entities) {
-			g.fill(255, 102, 0);
 			e.draw(g);
 		}
 	}

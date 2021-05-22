@@ -76,7 +76,7 @@ public class Player extends Entity {
 		img = g.loadImage("player1.png");
 		
 		g.pushMatrix();
-		
+		g.pushStyle();
 		g.fill(0, 255, 255);
 		g.tint(255, 255, 255);
 		g.image(img, getX(), getY(), getWidth(), getHeight() + 10);
@@ -98,6 +98,7 @@ public class Player extends Entity {
 		g.fill(0, 255, 0);
 		g.rect(getX() - 10, getY() + getHeight() + 10, (int) ((getWidth() + 20) * ((double) getHealth() / 3.0)), 10);
 		g.popMatrix();
+		g.popStyle();
 	}
 	public int getHealth() {
 		return health;

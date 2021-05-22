@@ -1,11 +1,8 @@
 package structure;
 
 import java.util.ArrayList;
-
-import backgrounds.Background;
-import backgrounds.NormalRoad;
-import entities.Entity;
-import entities.Player;
+import backgrounds.*;
+import entities.*;
 import processing.core.PApplet;
 import screens.BackgroundSelect;
 import screens.GameOver;
@@ -16,7 +13,7 @@ import screens.Screen;
 
 /**
  * The Game class represents the actual game panel where the game is played on
- * 
+ *
  * @author Karan Dalal
  * @version 1.0
  *
@@ -48,7 +45,7 @@ public class Game extends PApplet {
 		surface.setSize(800, 600);
 		surface.setResizable(false);
 
-		b = new NormalRoad();
+		b = BackgroundManager.chooseBackground();
 	}
 
 	/**
@@ -142,7 +139,7 @@ public class Game extends PApplet {
 	 * This method handles all the collisions between the player and the incoming
 	 * cars. After being hit it also implements a cool down or invulnerability
 	 * period. This method also prevents the player from leaving the road
-	 * 
+	 *
 	 * @param player the main user.
 	 */
 	public void collision(Player player) {

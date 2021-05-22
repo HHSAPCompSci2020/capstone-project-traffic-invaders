@@ -23,6 +23,7 @@ public class GameOver extends Screen {
 	 * @param PApplet g - A PApplet object which sets the main menu
 	 */
 	public void draw(PApplet g) {
+		g.pushStyle();
 		g.background(0, 0, 0);
 		g.fill(74, 134, 232);
 		g.textSize(43);
@@ -33,6 +34,7 @@ public class GameOver extends Screen {
 		g.text("Game Over", g.width / 2 - g.textWidth("Game Over") / 2, 200);
 		g.textSize(20);
 		g.text("You final Score Was: " + Background.getScore(), g.width / 2 - g.textWidth("You final Score Was: " + + Background.getSpeed())/2, g.height / 2 + 20);
+		g.popStyle();
 		
 	}
 

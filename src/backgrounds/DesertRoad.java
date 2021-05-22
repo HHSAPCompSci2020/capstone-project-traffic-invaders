@@ -3,22 +3,22 @@ package backgrounds;
 import processing.core.PApplet;
 
 /**
- * Road background player and cars drive on 
- * @author Vikram Penumarti
+ * Normal Road, except with two lane dividers
+ * @author Vikram
  * @version 1.0
  */
-public class NormalRoad extends Background
+public class DesertRoad extends Background
 {
 	/**
 	 * Passes the rgb color value to the superclass constructor
 	 */
-	public NormalRoad()
+	public DesertRoad()
 	{
-		super(100, 100, 100);
+		super(194, 178, 128);
 	}
 	
 	/**
-	 * Draws the normal road
+	 * Draws the double road
 	 * @param s PApplet object
 	 */
 	public void draw(PApplet s)
@@ -31,9 +31,9 @@ public class NormalRoad extends Background
 	 * @param s PApplet object
 	 */
 	public void scroll(PApplet s)
-	{
+	{	
 		super.scroll(s);
-		s.pushStyle();
+			
 		for(int i = 0; i <= 6; i++)
 		{	
 			if(time >= s.height)
@@ -42,14 +42,14 @@ public class NormalRoad extends Background
 			}
 
 			s.fill(255,255,255);
-			
-			s.rect(s.width/2 - s.width/40, -i * 3 * s.height/20 + time, s.width/40, s.height/20);
+				
+			s.rect(2 * s.width/5 - s.width/40, -i * 3 * s.height/20 + time, s.width/40, s.height/20);
+			s.rect(3 * s.width/5 - s.width/40, -i * 3 * s.height/20 + time, s.width/40, s.height/20);			
 		}
-		
+			
 		if(runs % 1800 == 0)
 		{
 			difficulty++;
 		}
-		s.popStyle();
 	}
 }
