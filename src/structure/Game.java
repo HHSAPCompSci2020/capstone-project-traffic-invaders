@@ -23,6 +23,7 @@ public class Game extends PApplet {
 	private Screen screen;
 
 	private Background b;
+	PApplet g;
 
 	public static CurrentScreen current;
 	private int tick, lastHit;
@@ -32,7 +33,7 @@ public class Game extends PApplet {
 		MENU, PLAYERSELECT, BACKGROUNDSELECT, GAME, GAMEOVER;
 	}
 
-	private static Player player;
+	private static Player player = new Player(800 / 2, 400, 50, 75);
 
 	/**
 	 * The setup method sets up the game panel for play with the MainMenu screen.
@@ -74,23 +75,35 @@ public class Game extends PApplet {
 		int type = MainMenu.clicked(mouseX, mouseY);
 		if (current == CurrentScreen.MENU) {
 			if (type == 1) {
-				player = new Player(width / 2, height - 100, 50, 75);
 				screen = new MainGame(player);
 				current = CurrentScreen.GAME;
-			}
-			else if (type == 2) {
+			} else if (type == 2) {
 				screen = new BackgroundSelect();
 				current = CurrentScreen.BACKGROUNDSELECT;
-			}
-			else if (type == 3) {
+			} else if (type == 3) {
 				screen = new PlayerSelect();
 				current = CurrentScreen.PLAYERSELECT;
 			}
+		} else if (current == CurrentScreen.PLAYERSELECT) {
+			if (mouseX > 50.0 && mouseX < 250.0 && mouseY > 175.0 && mouseY < 375.0) {
+				PlayerSelect.setSelection("default");
+				player.setImage("player1.png");
+			} else if (mouseX > 300.0 && mouseX < 500.0 && mouseY > 175.0 && mouseY < 375.0) {
+				PlayerSelect.setSelection("cop");
+				player.setImage("policeCar.png");
+			} else if (mouseX > 550.0 && mouseX < 750.0 && mouseY > 175.0 && mouseY < 375.0) {
+				PlayerSelect.setSelection("other");
+				player.setImage("player1.png");
+			} else if (mouseX > 265 && mouseX < 535 && mouseY > 500 && mouseY < 545) {
+				screen = new MainMenu();
+				current = CurrentScreen.MENU;
+			}
+
 		}
-		int back1 = PlayerSelect.clicked(mouseX, mouseY);
 		int back2 = BackgroundSelect.clicked(mouseX, mouseY);
-		if(current == CurrentScreen.PLAYERSELECT || current == CurrentScreen.BACKGROUNDSELECT) {
-			if(back1 == 1 || back2 == 1) {
+
+		if (current == CurrentScreen.BACKGROUNDSELECT) {
+			if (back2 == 1) {
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
 			}

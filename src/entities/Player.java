@@ -16,6 +16,7 @@ public class Player extends Entity {
 	private int velocity, velDiag, maxVelocity, friction;
 	private int health; 
 	private PImage img;
+	public String toSet = "player1.png";
 	
 	public Player(int x, int y, int width, int height) {
 		
@@ -73,7 +74,7 @@ public class Player extends Entity {
 
 	@Override
 	public void draw(PApplet g) {
-		img = g.loadImage("player1.png");
+		img = g.loadImage(toSet);
 		
 		g.pushMatrix();
 		g.pushStyle();
@@ -109,5 +110,8 @@ public class Player extends Entity {
 
 	public void setLeft(boolean x) {
 		left = x;
+	}
+	public void setImage(String set) {
+		toSet = set;;
 	}
 }
