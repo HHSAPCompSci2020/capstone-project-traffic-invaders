@@ -7,9 +7,11 @@ import backgrounds.NormalRoad;
 import entities.Entity;
 import entities.Player;
 import processing.core.PApplet;
+import screens.BackgroundSelect;
 import screens.GameOver;
 import screens.MainGame;
 import screens.MainMenu;
+import screens.PlayerSelect;
 import screens.Screen;
 
 /**
@@ -30,7 +32,7 @@ public class Game extends PApplet {
 	private static boolean onCoolDown;
 
 	private enum CurrentScreen {
-		MENU, GAME, GAMEOVER;
+		MENU, PLAYERSELECT, BACKGROUNDSELECT, GAME, GAMEOVER;
 	}
 
 	private static Player player;
@@ -78,6 +80,22 @@ public class Game extends PApplet {
 				player = new Player(width / 2, height - 100, 50, 75);
 				screen = new MainGame(player);
 				current = CurrentScreen.GAME;
+			}
+			else if (type == 2) {
+				screen = new BackgroundSelect();
+				current = CurrentScreen.BACKGROUNDSELECT;
+			}
+			else if (type == 3) {
+				screen = new PlayerSelect();
+				current = CurrentScreen.PLAYERSELECT;
+			}
+		}
+		int back1 = PlayerSelect.clicked(mouseX, mouseY);
+		int back2 = BackgroundSelect.clicked(mouseX, mouseY);
+		if(current == CurrentScreen.PLAYERSELECT || current == CurrentScreen.BACKGROUNDSELECT) {
+			if(back1 == 1 || back2 == 1) {
+				screen = new MainMenu();
+				current = CurrentScreen.MENU;
 			}
 		}
 	}
