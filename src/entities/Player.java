@@ -80,23 +80,12 @@ public class Player extends Entity {
 		g.fill(0, 255, 255);
 		g.tint(255, 255, 255);
 		g.image(img, getX(), getY(), getWidth(), getHeight() + 10);
-		//g.rect(getX(), getY(), getWidth(), getHeight());
-//		if(Game.getCoolDown()) {
-//			g.tint(255, 0 ,0);
-////			g.fill(255, 0, 0);
-////			g.rect(getX(), getY(), getWidth(), getHeight());
-//		}
-//		g.fill(0, 0, 0);
-//		g.rect(getX() - 5, getY() + 10, 5, 20);
-//		g.rect(getX() + getWidth(), getY() + 10, 5, 20);
-//		
-//		g.rect(getX() - 5, getY() + getHeight() - 30, 5, 20);
-//		g.rect(getX() + getWidth(), getY() + getHeight() - 30, 5, 20);
+
 //		//health bar
 		g.fill(255, 255, 255);
-		g.rect(getX() - 10, getY() + getHeight() + 10, getWidth() + 20, 10);
+		g.rect(getX() - 10, getY() + getHeight() + 15, getWidth() + 20, 10);
 		g.fill(0, 255, 0);
-		g.rect(getX() - 10, getY() + getHeight() + 10, (int) ((getWidth() + 20) * ((double) getHealth() / 3.0)), 10);
+		g.rect(getX() - 10, getY() + getHeight() + 15, (int) ((getWidth() + 20) * ((double) getHealth() / 3.0)), 10);
 		g.popMatrix();
 		g.popStyle();
 	}
