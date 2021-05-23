@@ -116,13 +116,13 @@ public class Game extends PApplet {
 		} else if (current == CurrentScreen.PLAYERSELECT) {
 			if (mouseX > 50.0 && mouseX < 250.0 && mouseY > 175.0 && mouseY < 375.0) {
 				PlayerSelect.setSelection("default");
-				player.setImage("player1.png");
+				player.setImage("images/player1.png");
 			} else if (mouseX > 300.0 && mouseX < 500.0 && mouseY > 175.0 && mouseY < 375.0) {
 				PlayerSelect.setSelection("cop");
-				player.setImage("policeCar.png");
+				player.setImage("images/policeCar.png");
 			} else if (mouseX > 550.0 && mouseX < 750.0 && mouseY > 175.0 && mouseY < 375.0) {
 				PlayerSelect.setSelection("other");
-				player.setImage("player1.png");
+				player.setImage("images/player1.png");
 			} else if (mouseX > 265 && mouseX < 535 && mouseY > 500 && mouseY < 545) {
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
