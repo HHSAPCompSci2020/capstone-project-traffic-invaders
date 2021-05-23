@@ -94,29 +94,14 @@ public class Background {
 		time += difficulty;
 
 		firstLineX = s.width / 5;
+		System.out.println(s.width/5);
+		System.out.println( s.width - s.width / 5);
 		secondLineX = s.width - s.width / 5;
 		s.line(firstLineX, 0, firstLineX, s.height);
 		s.line(secondLineX, 0, secondLineX, s.height);
 	}
 
-	/**
-	 * Gets the coordinates of the first line
-	 * 
-	 * @return firstLineX
-	 */
-	public static int getFirstLineX() {
-		return firstLineX;
-	}
-
-	/**
-	 * Gets the coordinates of the second line
-	 * 
-	 * @return secondLineX
-	 */
-	public static int getSecondLineX() {
-		return secondLineX;
-	}
-
+	
 	/**
 	 * Gets the speed of the screen
 	 * 

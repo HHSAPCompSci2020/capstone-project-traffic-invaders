@@ -11,7 +11,7 @@ import structure.Game;
  * Is the opening screen which the player will see when they first launch the
  * game, die, or want to quit
  * 
- * @author Eric Decasper
+ * @author Karan Dalal
  * @version 1.0
  */
 public class MainMenu extends Screen {

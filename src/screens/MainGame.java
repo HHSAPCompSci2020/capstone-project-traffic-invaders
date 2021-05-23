@@ -42,14 +42,16 @@ public class MainGame extends Screen{
 	@Override
 	public void update() {
 		tick++;
+		
 		double rand = Math.random() * 5;
 		if(tick % 50 == 0) {
 			if(rand > 3) {
-				entities.add(new SemiTruck((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX())) + Background.getFirstLineX() + 50, -125, 50, 125));
+				entities.add(new SemiTruck((int) (Math.random() * ((590-140))) + 140, -125, 50, 125));
 			}else if(rand > 1.5){
-				entities.add(new Car((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX())) + Background.getFirstLineX() + 50, -75, 50, 75));
+				//entities.add(new Car((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX())) + Background.getFirstLineX(), -75, 50, 75));
+				entities.add(new Car((int) (Math.random() * ((590-140))) + 140, -75, 50, 75));
 			}else {
-				entities.add(new RedCar((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX())) + Background.getFirstLineX() + 50, -75, 50, 75));
+				entities.add(new RedCar((int) (Math.random() * ((590-140))) + 140, -75, 50, 75));
 			}
 			
 			
