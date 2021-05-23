@@ -23,6 +23,7 @@ public class Game extends PApplet {
 	private Screen screen;
 
 	private Background b;
+	public int rCol, gCol, bCol;
 	PApplet g;
 
 	public static CurrentScreen current;
@@ -54,21 +55,23 @@ public class Game extends PApplet {
 	 */
 	public void draw() {
 		b = BackgroundManager.getBackground();
+		b.draw(this);
 		if (current == CurrentScreen.GAME) {
-			b.draw(this);
 			player.draw(this);
-			player.act();
+			if (!Background.getPaused()) {
+				player.act();
+			}
 			collision(player);
-
 		}
-
 		screen.draw(this);
-		screen.update();
+		if (!Background.getPaused()) {
+			screen.update();
+		}
 
 	}
 
 	/**
-	 * The mousePressed method detecs when the mouse is pressed and checks whether
+	 * The mousePressed method detects when the mouse is pressed and checks whether
 	 * to switch the screen and start the game
 	 */
 	public void mousePressed() {
@@ -121,6 +124,12 @@ public class Game extends PApplet {
 				player.reset();
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
+			}
+		} else if (current == CurrentScreen.GAME) {
+			if (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60) {
+				Background.setPaused(true);
+			} else if (Background.getPaused() && (mouseX > 300 && mouseX < 500 && mouseY > 150 && mouseY < 350)){
+				Background.setPaused(false);
 			}
 		}
 

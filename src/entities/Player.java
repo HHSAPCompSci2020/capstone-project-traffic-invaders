@@ -83,7 +83,7 @@ public class Player extends Entity {
 		g.tint(255, 255, 255);
 		g.image(img, getX(), getY(), getWidth(), getHeight() + 10);
 
-//		//health bar
+		// Health bar
 		g.fill(255, 255, 255);
 		g.rect(getX() - 10, getY() + getHeight() + 15, getWidth() + 20, 10);
 		g.fill(0, 255, 0);
