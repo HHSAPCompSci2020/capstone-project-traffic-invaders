@@ -2,29 +2,24 @@ package backgrounds;
 
 /**
  * Manages the backgrounds, picks which one to use when
+ * 
  * @author Vikram Penumarti
  * @version 1.0
  */
-public class BackgroundManager
-{
-	private static Background b;
-	
-	public static Background chooseBackground()
-	{
-		int choose = (int)(Math.random() * 2);
-		
-		if(choose == 0)
-		{
-			b = new CountryRoad();
-		}
-		else if(choose == 1)
-		{
+public class BackgroundManager {
+	public static Background b = new NormalRoad();
+
+	public static void setBackground(String s) {
+		if (s == "normal") {
 			b = new NormalRoad();
-		}
-		else if(choose == 2)
-		{
+		} else if (s == "country") {
+			b = new CountryRoad();
+		} else if (s == "desert") {
 			b = new DesertRoad();
 		}
+	}
+
+	public static Background getBackground() {
 		return b;
 	}
 }

@@ -46,7 +46,6 @@ public class Game extends PApplet {
 		surface.setSize(800, 600);
 		surface.setResizable(false);
 
-		b = BackgroundManager.chooseBackground();
 	}
 
 	/**
@@ -54,6 +53,7 @@ public class Game extends PApplet {
 	 * the window
 	 */
 	public void draw() {
+		b = BackgroundManager.getBackground();
 		if (current == CurrentScreen.GAME) {
 			b.draw(this);
 			player.draw(this);
@@ -98,16 +98,25 @@ public class Game extends PApplet {
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
 			}
-
-		}
-		int back2 = BackgroundSelect.clicked(mouseX, mouseY);
-
-		if (current == CurrentScreen.BACKGROUNDSELECT) {
-			if (back2 == 1) {
+		} else if (current == CurrentScreen.BACKGROUNDSELECT) {
+			if (mouseX > 50.0 && mouseX < 250.0 && mouseY > 175.0 && mouseY < 375.0) {
+				BackgroundSelect.setSelection("normal");
+				BackgroundManager.setBackground("normal");
+				b = BackgroundManager.getBackground();
+			} else if (mouseX > 300.0 && mouseX < 500.0 && mouseY > 175.0 && mouseY < 375.0) {
+				BackgroundSelect.setSelection("country");
+				BackgroundManager.setBackground("country");
+				b = BackgroundManager.getBackground();
+			} else if (mouseX > 550.0 && mouseX < 750.0 && mouseY > 175.0 && mouseY < 375.0) {
+				BackgroundSelect.setSelection("desert");
+				BackgroundManager.setBackground("desert");
+				b = BackgroundManager.getBackground();
+			} else if (mouseX > 265 && mouseX < 535 && mouseY > 500 && mouseY < 545) {
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
 			}
 		}
+
 	}
 
 	/**
