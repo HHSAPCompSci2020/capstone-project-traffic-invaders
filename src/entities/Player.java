@@ -118,7 +118,6 @@ public class Player extends Entity {
 
 	public void setImage(String set) {
 		toSet = set;
-		;
 	}
 
 	public void reset() {
