@@ -14,14 +14,14 @@ public class Player extends Entity {
 	private int disX, disY;
 	private boolean left, right, up, down;
 	private int velocity, velDiag, maxVelocity, friction;
-	private int health; 
+	private int health;
 	private PImage img;
 	public String toSet = "player1.png";
-	
+
 	public Player(int x, int y, int width, int height) {
-		
+
 		super(x, y, width, height);
-		
+
 		health = 3;
 		disX = 0;
 		disY = 1;
@@ -34,7 +34,7 @@ public class Player extends Entity {
 		friction = 2;
 		velDiag = (int) (Math.pow(2.0, (0.5)) / 2) * velocity;
 	}
-	
+
 	@Override
 	public void act() {
 		if (right != left) {
@@ -55,18 +55,19 @@ public class Player extends Entity {
 				}
 			}
 		}
-		//System.out.println("Right: " + right +"   left: " + left + "    Up: " + up + "   down: " + down);
+		// System.out.println("Right: " + right +" left: " + left + " Up: " + up + "
+		// down: " + down);
 		setLoc(getX() + disX, getY() + disY);
-		if(disY > 1) {
+		if (disY > 1) {
 			disY -= friction;
 		}
-		if(disY < 1) {
+		if (disY < 1) {
 			disY += friction;
 		}
-		if(disX > 0) {
+		if (disX > 0) {
 			disX -= friction;
 		}
-		if(disX < 0) {
+		if (disX < 0) {
 			disX += friction;
 		}
 
@@ -75,7 +76,7 @@ public class Player extends Entity {
 	@Override
 	public void draw(PApplet g) {
 		img = g.loadImage(toSet);
-		
+
 		g.pushMatrix();
 		g.pushStyle();
 		g.fill(0, 255, 255);
@@ -90,12 +91,15 @@ public class Player extends Entity {
 		g.popMatrix();
 		g.popStyle();
 	}
+
 	public int getHealth() {
 		return health;
 	}
+
 	public void hit() {
 		health--;
 	}
+
 	public void setUp(boolean x) {
 		up = x;
 	}
@@ -111,7 +115,23 @@ public class Player extends Entity {
 	public void setLeft(boolean x) {
 		left = x;
 	}
+
 	public void setImage(String set) {
-		toSet = set;;
+		toSet = set;
+		;
+	}
+
+	public void reset() {
+		health = 3;
+		disX = 0;
+		disY = 1;
+		left = false;
+		right = false;
+		up = false;
+		down = false;
+		velocity = 4;
+		maxVelocity = 8;
+		friction = 2;
+		velDiag = (int) (Math.pow(2.0, (0.5)) / 2) * velocity;
 	}
 }

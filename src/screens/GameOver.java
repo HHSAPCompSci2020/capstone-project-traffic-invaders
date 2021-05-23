@@ -34,6 +34,13 @@ public class GameOver extends Screen {
 		g.text("Game Over", g.width / 2 - g.textWidth("Game Over") / 2, 200);
 		g.textSize(20);
 		g.text("You final Score Was: " + Background.getScore(), g.width / 2 - g.textWidth("You final Score Was: " + + Background.getSpeed())/2, g.height / 2 + 20);
+		g.strokeWeight(4);
+		g.stroke(58, 130, 245);
+		g.fill(74, 134, 232, 75);
+		g.rect(g.width / 2 - 135, 400, 270, 45, 13, 13, 13, 13);
+		g.fill(255, 255, 255);
+		g.textSize(20);
+		g.text("Play Again", g.width / 2 - g.textWidth("Play Again") / 2, 435);
 		g.popStyle();
 		
 	}

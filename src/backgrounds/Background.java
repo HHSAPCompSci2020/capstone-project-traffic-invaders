@@ -110,4 +110,8 @@ public class Background
 	{
 		return score;
 	}
+	public void reset() {
+		score = 0;
+		time = 0;
+	}
 }

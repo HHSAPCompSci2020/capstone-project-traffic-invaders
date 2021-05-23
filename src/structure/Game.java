@@ -115,6 +115,13 @@ public class Game extends PApplet {
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
 			}
+		} else if (current == CurrentScreen.GAMEOVER) {
+			if (mouseX > 265 && mouseX < 535 && mouseY > 400 && mouseY < 445) {
+				b.reset();
+				player.reset();
+				screen = new MainMenu();
+				current = CurrentScreen.MENU;
+			}
 		}
 
 	}
