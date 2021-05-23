@@ -15,6 +15,7 @@ public class Background {
 	static int difficulty;
 	int runs;
 	PFont font;
+	public static boolean paused = false;
 
 	private int r, g, b;
 
@@ -56,32 +57,27 @@ public class Background {
 		s.textSize(20);
 		s.background(r, g, b);
 		// every time draw() is called time increases
-//		if (!paused) {
-		time++;
-		score++;
-//		}
+		if (!paused) {
+			time++;
+			score++;
+		}
 		s.text("Score: " + score, s.width / 16, s.height / 12);
 		scroll(s);
-//		paused(s);
+		paused(s);
 
 	}
 
-//	public void paused(PApplet s) {
-//		if (paused) {
-//			s.fill(0, 0, 0);
-//			s.rect(730, 10, 50, 50);
-//			s.fill(255, 255, 255);
-//			s.rect(740, 18, 12, 34);
-//			s.rect(758, 18, 12, 34);
-//
-//		} else {
-//			s.fill(0, 0, 0);
-//			s.rect(730, 10, 50, 50);
-//			s.fill(255, 255, 255);
-//			s.rect(740, 18, 12, 34);
-//			s.rect(758, 18, 12, 34);
-//		}
-//	}
+	public void paused(PApplet s) {
+		s.fill(0, 0, 0);
+		s.rect(730, 10, 50, 50);
+		s.fill(255, 255, 255);
+		if (!paused) {
+			s.rect(740, 18, 12, 34);
+			s.rect(758, 18, 12, 34);
+		} else {
+			s.triangle(740, 18, 770, 35, 740, 52);
+		}
+	}
 
 	/**
 	 * Scrolls down the screen
@@ -139,12 +135,12 @@ public class Background {
 		time = 0;
 	}
 
-//	public static void setPaused(boolean b) {
-//		paused = b;
-//	}
-//
-//	public static boolean getPaused() {
-//		return paused;
-//	}
+	public static void setPaused(boolean b) {
+		paused = b;
+	}
+
+	public static boolean getPaused() {
+		return paused;
+	}
 
 }

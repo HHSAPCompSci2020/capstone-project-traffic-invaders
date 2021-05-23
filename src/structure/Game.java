@@ -61,9 +61,9 @@ public class Game extends PApplet {
 		b.draw(this);
 		if (current == CurrentScreen.GAME) {
 			player.draw(this);
-//			if (!Background.getPaused()) {
+			if (!Background.getPaused()) {
 			player.act();
-//			}
+			}
 			collision(player);
 		}
 		if (current == CurrentScreen.GAME && mouseMode) {
@@ -89,9 +89,9 @@ public class Game extends PApplet {
 			}
 		}
 		screen.draw(this);
-//		if (!Background.getPaused()) {
+		if (!Background.getPaused()) {
 		screen.update();
-//		}
+		}
 
 	}
 
@@ -151,12 +151,12 @@ public class Game extends PApplet {
 				current = CurrentScreen.MENU;
 				b.reset();
 			}
-//		} else if (current == CurrentScreen.GAME) {
-//			if (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60) {
-////				Background.setPaused(true);
-//			} else if (Background.getPaused() && (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60)) {
-////				Background.setPaused(false);
-//			}
+		} else if (current == CurrentScreen.GAME) {
+			if (!Background.getPaused() && (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60)) {
+				Background.setPaused(true);
+			} else if (Background.getPaused() && (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60)) {
+				Background.setPaused(false);
+			}
 		}
 
 	}
