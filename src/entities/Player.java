@@ -13,7 +13,7 @@ import structure.Game;
 public class Player extends Entity {
 	private int disX, disY;
 	private boolean left, right, up, down;
-	private int velocity, velDiag, maxVelocity, friction;
+	private int velocity, maxVelocity, friction, dragBack;
 	private int health;
 	private PImage img;
 	public String toSet = "player1.png";
@@ -32,7 +32,7 @@ public class Player extends Entity {
 		velocity = 4;
 		maxVelocity = 8;
 		friction = 2;
-		velDiag = (int) (Math.pow(2.0, (0.5)) / 2) * velocity;
+		dragBack = 2;
 	}
 
 	@Override
@@ -58,10 +58,10 @@ public class Player extends Entity {
 		// System.out.println("Right: " + right +" left: " + left + " Up: " + up + "
 		// down: " + down);
 		setLoc(getX() + disX, getY() + disY);
-		if (disY > 1) {
+		if (disY > dragBack) {
 			disY -= friction;
 		}
-		if (disY < 1) {
+		if (disY < dragBack) {
 			disY += friction;
 		}
 		if (disX > 0) {
@@ -131,6 +131,5 @@ public class Player extends Entity {
 		velocity = 4;
 		maxVelocity = 8;
 		friction = 2;
-		velDiag = (int) (Math.pow(2.0, (0.5)) / 2) * velocity;
 	}
 }
