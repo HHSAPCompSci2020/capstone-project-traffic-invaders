@@ -31,7 +31,7 @@ public class Player extends Entity {
 		down = false;
 		velocity = 3;
 		maxVelocity = 8;
-		friction = 2;
+		friction = 1;
 		dragBack = 2;
 	}
 

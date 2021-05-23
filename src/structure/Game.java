@@ -30,6 +30,7 @@ public class Game extends PApplet {
 	public static CurrentScreen current;
 	private int tick, lastHit;
 	private static boolean onCoolDown;
+	private boolean mouseMode;
 
 	private enum CurrentScreen {
 		MENU, PLAYERSELECT, BACKGROUNDSELECT, GAME, GAMEOVER;
@@ -47,6 +48,7 @@ public class Game extends PApplet {
 		screen = new MainMenu();
 		surface.setSize(800, 600);
 		surface.setResizable(false);
+		mouseMode = false;
 
 	}
 
@@ -63,6 +65,28 @@ public class Game extends PApplet {
 			player.act();
 //			}
 			collision(player);
+		}
+		if (current == CurrentScreen.GAME && mouseMode) {
+			if (player.getX() + player.getWidth() > mouseX) {
+				player.setLeft(true);
+			} else {
+				player.setLeft(false);
+			}
+			if (player.getX() < mouseX) {
+				player.setRight(true);
+			} else {
+				player.setRight(false);
+			}
+			if (player.getY() + player.getHeight() > mouseY) {
+				player.setUp(true);
+			} else {
+				player.setUp(false);
+			}
+			if (player.getY() < mouseY) {
+				player.setDown(true);
+			} else {
+				player.setDown(false);
+			}
 		}
 		screen.draw(this);
 //		if (!Background.getPaused()) {
@@ -143,15 +167,17 @@ public class Game extends PApplet {
 	 * is pressed.
 	 */
 	public void keyPressed() {
-		if (current == CurrentScreen.GAME) {
-			if (key == 'a') {
-				player.setLeft(true);
-			} else if (key == 's') {
-				player.setDown(true);
-			} else if (key == 'w') {
-				player.setUp(true);
-			} else if (key == 'd') {
-				player.setRight(true);
+		if (!mouseMode) {
+			if (current == CurrentScreen.GAME) {
+				if (key == 'a') {
+					player.setLeft(true);
+				} else if (key == 's') {
+					player.setDown(true);
+				} else if (key == 'w') {
+					player.setUp(true);
+				} else if (key == 'd') {
+					player.setRight(true);
+				}
 			}
 		}
 	}
@@ -171,6 +197,13 @@ public class Game extends PApplet {
 				player.setUp(false);
 			} else if (key == 'd') {
 				player.setRight(false);
+			} else if (key == 'e') {
+				player.setLeft(false);
+				player.setDown(false);
+				player.setUp(false);
+				player.setRight(false);
+
+				mouseMode = !mouseMode;
 			}
 		}
 	}
