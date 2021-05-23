@@ -37,12 +37,12 @@ public class MainGame extends Screen{
 	@Override
 	public void update() {
 		tick++;
-
+		
 		if(tick % 50 == 0) {
 			if(Math.random() * 5 > 3) {
-				entities.add(new SemiTruck((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX()) - 100) + Background.getFirstLineX() + 50, -125, 50, 125));
+				entities.add(new SemiTruck((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX())) + Background.getFirstLineX() + 50, -125, 50, 125));
 			}else {
-				entities.add(new Car((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX()) - 100) + Background.getFirstLineX() + 50, -75, 50, 75));
+				entities.add(new Car((int) (Math.random() * (Background.getSecondLineX() - Background.getFirstLineX())) + Background.getFirstLineX() + 50, -75, 50, 75));
 			}
 			
 			
