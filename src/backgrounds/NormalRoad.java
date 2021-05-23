@@ -33,7 +33,6 @@ public class NormalRoad extends Background
 	public void scroll(PApplet s)
 	{
 		super.scroll(s);
-		s.pushStyle();
 		for(int i = 0; i <= 6; i++)
 		{	
 			if(time >= s.height)
@@ -50,6 +49,5 @@ public class NormalRoad extends Background
 		{
 			difficulty++;
 		}
-		s.popStyle();
 	}
 }

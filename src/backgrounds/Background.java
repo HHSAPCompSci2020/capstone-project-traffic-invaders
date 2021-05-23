@@ -1,7 +1,7 @@
 package backgrounds;
 
 import processing.core.PApplet;
-import processing.core.PConstants;
+import processing.core.PFont;
 
 /**
  * Superclass of all backgrounds
@@ -14,10 +14,11 @@ public class Background {
 	static int score;
 	static int difficulty;
 	int runs;
+	PFont font;
 
 	private int r, g, b;
 
-	public static boolean paused = false;
+//	public static boolean paused = false;
 
 	private static int firstLineX;
 	private static int secondLineX;
@@ -50,38 +51,37 @@ public class Background {
 	 * @param s PApplet object
 	 */
 	public void draw(PApplet s) {
+		font = s.createFont("lib/font.ttf", 40);
+		s.textFont(font);
+		s.textSize(20);
 		s.background(r, g, b);
-
 		// every time draw() is called time increases
-		if (!paused) {
-			time++;
-			score++;
-		}
+//		if (!paused) {
+		time++;
+		score++;
+//		}
 		s.text("Score: " + score, s.width / 16, s.height / 12);
 		scroll(s);
-		paused(s);
+//		paused(s);
 
 	}
 
-	public void paused(PApplet s) {
-		if (paused) {
-			s.noStroke();
-			s.fill(100, 100, 100);
-			s.rect(0, 0, 800, 600);
-			s.fill(0, 0, 0);
-			s.rect(s.width / 2 - 100, s.height / 2 - 150, 200, 200);
-			s.fill(255, 255, 255);
-			s.rect(s.width / 2 - 60, s.height / 2 - 118, 48, 136);
-			s.rect(s.width / 2 + 12, s.height / 2 - 118, 48, 136);
-		} else {
-			s.noStroke();
-			s.fill(0, 0, 0);
-			s.rect(730, 10, 50, 50);
-			s.fill(255, 255, 255);
-			s.rect(740, 18, 12, 34);
-			s.rect(758, 18, 12, 34);
-		}
-	}
+//	public void paused(PApplet s) {
+//		if (paused) {
+//			s.fill(0, 0, 0);
+//			s.rect(730, 10, 50, 50);
+//			s.fill(255, 255, 255);
+//			s.rect(740, 18, 12, 34);
+//			s.rect(758, 18, 12, 34);
+//
+//		} else {
+//			s.fill(0, 0, 0);
+//			s.rect(730, 10, 50, 50);
+//			s.fill(255, 255, 255);
+//			s.rect(740, 18, 12, 34);
+//			s.rect(758, 18, 12, 34);
+//		}
+//	}
 
 	/**
 	 * Scrolls down the screen
@@ -139,12 +139,12 @@ public class Background {
 		time = 0;
 	}
 
-	public static void setPaused(boolean b) {
-		paused = b;
-	}
-
-	public static boolean getPaused() {
-		return paused;
-	}
+//	public static void setPaused(boolean b) {
+//		paused = b;
+//	}
+//
+//	public static boolean getPaused() {
+//		return paused;
+//	}
 
 }

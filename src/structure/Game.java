@@ -25,6 +25,7 @@ public class Game extends PApplet {
 	private Background b;
 	public int rCol, gCol, bCol;
 	PApplet g;
+	static ArrayList<Integer> allScores = new ArrayList<Integer>();
 
 	public static CurrentScreen current;
 	private int tick, lastHit;
@@ -58,15 +59,15 @@ public class Game extends PApplet {
 		b.draw(this);
 		if (current == CurrentScreen.GAME) {
 			player.draw(this);
-			if (!Background.getPaused()) {
-				player.act();
-			}
+//			if (!Background.getPaused()) {
+			player.act();
+//			}
 			collision(player);
 		}
 		screen.draw(this);
-		if (!Background.getPaused()) {
-			screen.update();
-		}
+//		if (!Background.getPaused()) {
+		screen.update();
+//		}
 
 	}
 
@@ -79,6 +80,7 @@ public class Game extends PApplet {
 		if (current == CurrentScreen.MENU) {
 			if (type == 1) {
 				screen = new MainGame(player);
+				b.reset();
 				current = CurrentScreen.GAME;
 			} else if (type == 2) {
 				screen = new BackgroundSelect();
@@ -120,17 +122,17 @@ public class Game extends PApplet {
 			}
 		} else if (current == CurrentScreen.GAMEOVER) {
 			if (mouseX > 265 && mouseX < 535 && mouseY > 400 && mouseY < 445) {
-				b.reset();
 				player.reset();
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
+				b.reset();
 			}
-		} else if (current == CurrentScreen.GAME) {
-			if (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60) {
-				Background.setPaused(true);
-			} else if (Background.getPaused() && (mouseX > 300 && mouseX < 500 && mouseY > 150 && mouseY < 350)){
-				Background.setPaused(false);
-			}
+//		} else if (current == CurrentScreen.GAME) {
+//			if (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60) {
+////				Background.setPaused(true);
+//			} else if (Background.getPaused() && (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60)) {
+////				Background.setPaused(false);
+//			}
 		}
 
 	}
@@ -200,6 +202,7 @@ public class Game extends PApplet {
 
 					if (player.getHealth() <= 0) {
 						screen = new GameOver();
+						allScores.add((int) GameOver.finalScore());
 						current = CurrentScreen.GAMEOVER;
 					}
 
@@ -224,6 +227,7 @@ public class Game extends PApplet {
 				lastHit = tick;
 				if (player.getHealth() <= 0) {
 					screen = new GameOver();
+					allScores.add((int) GameOver.finalScore());
 					current = CurrentScreen.GAMEOVER;
 				}
 			} else if (tick - lastHit > 100) {
@@ -237,4 +241,9 @@ public class Game extends PApplet {
 	public static boolean getCoolDown() {
 		return onCoolDown;
 	}
+
+	public static ArrayList<Integer> getScores() {
+		return allScores;
+	}
+
 }

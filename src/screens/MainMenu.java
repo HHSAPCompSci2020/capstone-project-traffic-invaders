@@ -1,8 +1,11 @@
 package screens;
 
+import java.util.Collections;
+
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
+import structure.Game;
 
 /**
  * Is the opening screen which the player will see when they first launch the
@@ -67,6 +70,10 @@ public class MainMenu extends Screen {
 		g.fill(255, 255, 255);
 		g.textSize(20);
 		g.text("Players", g.width / 2 - g.textWidth("Players") / 2, 375);
+		if(Game.getScores().size() != 0) {
+			g.textSize(30);
+			g.text("High Score:" + Collections.max(Game.getScores()), g.width / 2 - g.textWidth("High Score:" + Collections.max(Game.getScores())) / 2, 550);
+		}
 		g.pop();
 
 	}
