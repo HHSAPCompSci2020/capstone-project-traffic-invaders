@@ -17,9 +17,9 @@ public class BackgroundSelect extends Screen {
 	public void draw(PApplet g) {
 		mouseX = g.mouseX;
 		mouseY = g.mouseY;
-		background1 = g.loadImage("NormalRoad.png");
-		background2 = g.loadImage("CountryRoad.png");
-		background3 = g.loadImage("DesertRoad.png");
+		background1 = g.loadImage("images/NormalRoad.png");
+		background2 = g.loadImage("images/CountryRoad.png");
+		background3 = g.loadImage("images/DesertRoad.png");
 		g.push();
 		font = g.createFont("lib/font.ttf", 40);
 		g.textFont(font);

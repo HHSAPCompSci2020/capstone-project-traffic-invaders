@@ -35,7 +35,7 @@ public class Car extends Entity
 	@Override
 	public void draw(PApplet g) {
 		// TODO Auto-generated method stub
-		img = g.loadImage("car1.png");
+		img = g.loadImage("images/car1.png");
 		g.image(img, getX(), getY(), getWidth(), getHeight() + 10);
 
 	}

@@ -17,8 +17,8 @@ public class PlayerSelect extends Screen {
 	public void draw(PApplet g) {
 		mouseX = g.mouseX;
 		mouseY = g.mouseY;
-		player1 = g.loadImage("player1.png");
-		player2 = g.loadImage("policeCar.png");
+		player1 = g.loadImage("images/player1.png");
+		player2 = g.loadImage("images/policeCar.png");
 		g.push();
 		font = g.createFont("lib/font.ttf", 40);
 		g.textFont(font);

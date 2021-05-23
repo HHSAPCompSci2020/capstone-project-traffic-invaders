@@ -16,7 +16,7 @@ public class Player extends Entity {
 	private int velocity, maxVelocity, friction, dragBack;
 	private int health;
 	private PImage img;
-	public String toSet = "player1.png";
+	public String toSet = "images/player1.png";
 
 	public Player(int x, int y, int width, int height) {
 
@@ -29,8 +29,8 @@ public class Player extends Entity {
 		right = false;
 		up = false;
 		down = false;
-		velocity = 4;
-		maxVelocity = 8;
+		velocity = 3;
+		maxVelocity = 9;
 		friction = 2;
 		dragBack = 2;
 	}

@@ -35,7 +35,7 @@ public class SemiTruck extends Entity
 	@Override
 	public void draw(PApplet g) {
 		// TODO Auto-generated method stub
-		img = g.loadImage("semiTruck1.png");
+		img = g.loadImage("images/semiTruck1.png");
 		g.image(img, getX(), getY(), getWidth(), getHeight() + 10);
 
 	}
