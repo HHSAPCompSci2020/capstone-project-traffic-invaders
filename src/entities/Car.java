@@ -12,8 +12,10 @@ import processing.core.PImage;
 public class Car extends Entity
 {
 	private PImage img;
-	public Car(int x, int y, int width, int height) {
+	private int speed;
+	public Car(int x, int y, int width, int height, int speed) {
 		super(x, y, width, height);
+		this.speed = speed;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -23,8 +25,7 @@ public class Car extends Entity
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
-		setLoc(getX(), getY() + ((int) Background.getSpeed()) / 45);
-//		setLoc(getX(), getY() + (int)(-NormalRoad.getB() * 3 * getHeight() + NormalRoad.getScrollRate()));		
+		setLoc(getX(), getY() + speed);
 	}
 
 	/**

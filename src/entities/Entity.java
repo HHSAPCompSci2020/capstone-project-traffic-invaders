@@ -9,7 +9,7 @@ import processing.core.PApplet;
  */
 public abstract class Entity {
 	private int x, y, width, height;
-	private boolean isOutOfBounds;
+
 	
 	/**
 	 * The entity constructors initializes the fields to the parameters. 
@@ -23,7 +23,6 @@ public abstract class Entity {
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		isOutOfBounds = false;
 		
 	}
 	
@@ -55,9 +54,6 @@ public abstract class Entity {
 	}
 	public int getHeight() {
 		return height;
-	}
-	public void setIsOutOfBounds(boolean x) {
-		isOutOfBounds = false;
 	}
 	public void setHeight(int height) {
 		this.height = height;

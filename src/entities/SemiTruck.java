@@ -12,8 +12,10 @@ import processing.core.PImage;
 public class SemiTruck extends Entity
 {
 	private PImage img;
-	public SemiTruck(int x, int y, int width, int height) {
+	private int speed;
+	public SemiTruck(int x, int y, int width, int height, int speed) {
 		super(x, y, width, height);
+		this.speed = speed;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -23,7 +25,7 @@ public class SemiTruck extends Entity
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
-		setLoc(getX(), getY() + ((int) Background.getSpeed()) / 45);
+		setLoc(getX(), getY() + speed);
 	}
 
 	/**
