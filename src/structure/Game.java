@@ -6,6 +6,7 @@ import entities.*;
 import processing.core.PApplet;
 import screens.BackgroundSelect;
 import screens.GameOver;
+import screens.Instructions;
 import screens.MainGame;
 import screens.MainMenu;
 import screens.PlayerSelect;
@@ -33,7 +34,7 @@ public class Game extends PApplet {
 	private boolean mouseMode;
 
 	private enum CurrentScreen {
-		MENU, PLAYERSELECT, BACKGROUNDSELECT, GAME, GAMEOVER;
+		MENU, PLAYERSELECT, BACKGROUNDSELECT, INSTRUCTIONS, GAME, GAMEOVER;
 	}
 
 	private static Player player = new Player(800 / 2, 400, 50, 75);
@@ -62,7 +63,7 @@ public class Game extends PApplet {
 		if (current == CurrentScreen.GAME) {
 			player.draw(this);
 			if (!Background.getPaused()) {
-			player.act();
+				player.act();
 			}
 			collision(player);
 		}
@@ -90,7 +91,7 @@ public class Game extends PApplet {
 		}
 		screen.draw(this);
 		if (!Background.getPaused()) {
-		screen.update();
+			screen.update();
 		}
 
 	}
@@ -112,17 +113,44 @@ public class Game extends PApplet {
 			} else if (type == 3) {
 				screen = new PlayerSelect();
 				current = CurrentScreen.PLAYERSELECT;
+			} else if (type == 4) {
+				screen = new Instructions();
+				current = CurrentScreen.INSTRUCTIONS;
 			}
 		} else if (current == CurrentScreen.PLAYERSELECT) {
 			if (mouseX > 50.0 && mouseX < 250.0 && mouseY > 175.0 && mouseY < 375.0) {
 				PlayerSelect.setSelection("default");
-				player.setImage("images/player1.png");
+				if (mouseX > 160 && mouseX < 190 && mouseY > 320 && mouseY < 350) {
+					PlayerSelect.selectionPlay1("green");
+					player.setImage("images/greenTruck.png");
+				} else {
+					PlayerSelect.selectionPlay1("blue");
+					player.setImage("images/blueTruck.png");
+				}
+				player.setHealth(3);
+				player.setVelocity(9);
 			} else if (mouseX > 300.0 && mouseX < 500.0 && mouseY > 175.0 && mouseY < 375.0) {
 				PlayerSelect.setSelection("cop");
-				player.setImage("images/policeCar.png");
+				if (mouseX > 410 && mouseX < 440 && mouseY > 320 && mouseY < 350) {
+					PlayerSelect.selectionPlay2("blue2");
+					player.setImage("images/bluePoliceCar.png");
+				} else {
+					PlayerSelect.selectionPlay2("black");
+					player.setImage("images/policeCar.png");
+				}
+				player.setHealth(2);
+				player.setVelocity(15);
 			} else if (mouseX > 550.0 && mouseX < 750.0 && mouseY > 175.0 && mouseY < 375.0) {
-				PlayerSelect.setSelection("other");
-				player.setImage("images/player1.png");
+				PlayerSelect.setSelection("van");
+				if (mouseX > 660 && mouseX < 690 && mouseY > 320 && mouseY < 350) {
+					PlayerSelect.selectionPlay3("grey");
+					player.setImage("images/greyVan.png");
+				} else {
+					PlayerSelect.selectionPlay3("pink");
+					player.setImage("images/pinkVan.png");
+				}
+				player.setHealth(4);
+				player.setVelocity(7);
 			} else if (mouseX > 265 && mouseX < 535 && mouseY > 500 && mouseY < 545) {
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
@@ -157,8 +185,12 @@ public class Game extends PApplet {
 			} else if (Background.getPaused() && (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60)) {
 				Background.setPaused(false);
 			}
+		} else if (current == CurrentScreen.INSTRUCTIONS) {
+			if (mouseX > 265 && mouseX < 535 && mouseY > 500 && mouseY < 545) {
+				screen = new MainMenu();
+				current = CurrentScreen.MENU;
+			}
 		}
-
 	}
 
 	/**

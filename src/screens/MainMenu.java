@@ -70,10 +70,19 @@ public class MainMenu extends Screen {
 		g.fill(255, 255, 255);
 		g.textSize(20);
 		g.text("Players", g.width / 2 - g.textWidth("Players") / 2, 375);
-		if(Game.getScores().size() != 0) {
+		if (Game.getScores().size() != 0) {
 			g.textSize(30);
-			g.text("High Score:" + Collections.max(Game.getScores()), g.width / 2 - g.textWidth("High Score:" + Collections.max(Game.getScores())) / 2, 550);
+			g.text("High Score:" + Collections.max(Game.getScores()),
+					g.width / 2 - g.textWidth("High Score:" + Collections.max(Game.getScores())) / 2, 550);
 		}
+		// Instructions Button
+		g.strokeWeight(4);
+		g.stroke(58, 130, 245);
+		g.fill(74, 134, 232, 75);
+		g.rect(g.width / 2 - 135, 410, 270, 45, 13, 13, 13, 13);
+		g.fill(255, 255, 255);
+		g.textSize(20);
+		g.text("Instructions", g.width / 2 - g.textWidth("Instructions") / 2, 445);
 		g.pop();
 
 	}
@@ -97,6 +106,8 @@ public class MainMenu extends Screen {
 			return 2;
 		} else if (mouseX > 265 && mouseX < 535 && mouseY > 340 && mouseY < 395) {
 			return 3;
+		} else if (mouseX > 265 && mouseX < 535 && mouseY > 410 && mouseY < 445) {
+			return 4;
 		} else
 			return 0;
 	}

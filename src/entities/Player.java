@@ -2,7 +2,6 @@ package entities;
 
 import processing.core.PApplet;
 import processing.core.PImage;
-import structure.Game;
 
 /**
  * Represents the vehicle which the player is
@@ -14,15 +13,16 @@ public class Player extends Entity {
 	private int disX, disY;
 	private boolean left, right, up, down;
 	private int velocity, maxVelocity, friction, dragBack;
-	private int health;
+	private int health, beginHealth;
 	private PImage img;
-	public String toSet = "images/player1.png";
+	public String toSet = "images/blueTruck.png";
 
 	public Player(int x, int y, int width, int height) {
 
 		super(x, y, width, height);
 
 		health = 3;
+		beginHealth = 3;
 		disX = 0;
 		disY = 1;
 		left = false;
@@ -87,13 +87,18 @@ public class Player extends Entity {
 		g.fill(255, 255, 255);
 		g.rect(getX() - 10, getY() + getHeight() + 15, getWidth() + 20, 10);
 		g.fill(0, 255, 0);
-		g.rect(getX() - 10, getY() + getHeight() + 15, (int) ((getWidth() + 20) * ((double) getHealth() / 3.0)), 10);
+		g.rect(getX() - 10, getY() + getHeight() + 15,
+				(int) ((getWidth() + 20) * ((double) getHealth() / getBeginHealth())), 10);
 		g.popMatrix();
 		g.popStyle();
 	}
 
 	public int getHealth() {
 		return health;
+	}
+
+	public int getBeginHealth() {
+		return beginHealth;
 	}
 
 	public void hit() {
@@ -120,16 +125,22 @@ public class Player extends Entity {
 		toSet = set;
 	}
 
+	public void setHealth(int set) {
+		beginHealth = set;
+		health = set;
+	}
+
+	public void setVelocity(int set) {
+		maxVelocity = set;
+	}
+
 	public void reset() {
-		health = 3;
+		health = getBeginHealth();
 		disX = 0;
 		disY = 1;
 		left = false;
 		right = false;
 		up = false;
 		down = false;
-		velocity = 4;
-		maxVelocity = 8;
-		friction = 2;
 	}
 }

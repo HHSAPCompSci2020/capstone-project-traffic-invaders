@@ -45,10 +45,14 @@ public class BackgroundSelect extends Screen {
 		g.rect(50, 175, 200, 300, 13, 13, 13, 13);
 		g.fill(255, 255, 255);
 		g.textSize(15);
-		g.text("Normal Road", (100 - (g.textWidth("Normal Road") / 2)) + 50, 300);
+		g.text("Normal Road", (100 - (g.textWidth("Normal Road") / 2)) + 50, 320);
+		g.textSize(12);
+		g.text("Because who", (100 - (g.textWidth("Because who") / 2)) + 50, 360);
+		g.text("doesn't love", (100 - (g.textWidth("doesn't love") / 2)) + 50, 380);
+		g.text("original?", (100 - (g.textWidth("original?") / 2)) + 50, 400);
 		g.push();
 		g.imageMode(PConstants.CENTER);
-		g.translate(150, 225);
+		g.translate(150, 230);
 		g.image(background1, (float) 0, (float) 0, (float) (802 * 0.14), (float) (598 * 0.14));
 		g.pop();
 		// Section 2
@@ -61,10 +65,14 @@ public class BackgroundSelect extends Screen {
 		g.rect(300, 175, 200, 300, 13, 13, 13, 13);
 		g.fill(255, 255, 255);
 		g.textSize(15);
-		g.text("Country Road", (100 - (g.textWidth("Country Road") / 2)) + 300, 300);
+		g.text("Country Road", (100 - (g.textWidth("Country Road") / 2)) + 300, 320);
+		g.textSize(12);
+		g.text("Country roads", (100 - (g.textWidth("Country roads") / 2)) + 300, 360);
+		g.text("take me", (100 - (g.textWidth("take me") / 2)) + 300, 380);
+		g.text("hoomeeeeee", (100 - (g.textWidth("hoomeeeeee") / 2)) + 300, 400);
 		g.push();
 		g.imageMode(PConstants.CENTER);
-		g.translate(400, 225);
+		g.translate(400, 230);
 		g.image(background2, (float) 0, (float) 0, (float) (804 * 0.139651741), (float) (601 * 0.139301165));
 		g.pop();
 		// Section 3
@@ -77,10 +85,14 @@ public class BackgroundSelect extends Screen {
 		g.rect(550, 175, 200, 300, 13, 13, 13, 13);
 		g.fill(255, 255, 255);
 		g.textSize(15);
-		g.text("Desert Road", (100 - (g.textWidth("Desert Road") / 2)) + 550, 300);
+		g.text("Desert Road", (100 - (g.textWidth("Desert Road") / 2)) + 550, 320);
+		g.textSize(12);
+		g.text("Careful, don’t", (100 - (g.textWidth("Careful, don’t") / 2)) + 550, 360);
+		g.text("get sand in", (100 - (g.textWidth("get sand in") / 2)) + 550, 380);
+		g.text("your socks!", (100 - (g.textWidth("your socks") / 2)) + 550, 400);
 		g.push();
 		g.imageMode(PConstants.CENTER);
-		g.translate(650, 225);
+		g.translate(650, 230);
 		g.image(background3, (float) 0, (float) 0, (float) (796 * 0.141055276), (float) (603 * 0.138839138));
 		g.pop();
 
