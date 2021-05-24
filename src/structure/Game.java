@@ -240,7 +240,10 @@ public class Game extends PApplet {
 				player.setRight(false);
 
 				mouseMode = !mouseMode;
+			} else if(key == 'f') {
+				music.toggle();
 			}
+				
 		}
 	}
 
@@ -281,7 +284,7 @@ public class Game extends PApplet {
 			}
 		} else if (tick - lastHit > 100) {
 			onCoolDown = false;
-			music.playMusic();
+//			music.playMusic();
 		}
 		if (player.getX() < Background.getFirstLineX()) {
 			player.setLoc(Background.getFirstLineX(), player.getY());
