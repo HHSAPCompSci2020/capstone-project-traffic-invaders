@@ -2,6 +2,7 @@ package entities;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import structure.Game;
 
 /**
  * Represents the vehicle which the player is
@@ -86,7 +87,12 @@ public class Player extends Entity {
 		// Health bar
 		g.fill(255, 255, 255);
 		g.rect(getX() - 10, getY() + getHeight() + 15, getWidth() + 20, 10);
-		g.fill(0, 255, 0);
+		if(Game.getCoolDown()) {
+			g.fill(255, 0, 0);
+		}else {
+			g.fill(0, 255, 0);
+		}
+		
 		g.rect(getX() - 10, getY() + getHeight() + 15,
 				(int) ((getWidth() + 20) * ((double) getHealth() / getBeginHealth())), 10);
 		g.popMatrix();
