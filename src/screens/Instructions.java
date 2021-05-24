@@ -35,12 +35,14 @@ public class Instructions extends Screen {
 		String d = "you will lose a unit of health. Depending on your car";
 		String e = "your HP varies. Make sure to pick whatever car fits your playstyle!";
 		String f = "Try to make it as far as you can to set a new highscore!";
+		String h = "At any point hit F to toggle the music";
 		g.text(a, g.width / 2 - g.textWidth(a) / 2, g.height / 2 - 100);
 		g.text(b, g.width / 2 - g.textWidth(b) / 2, g.height / 2 - 80);
 		g.text(c, g.width / 2 - g.textWidth(c) / 2, g.height / 2 - 60);
 		g.text(d, g.width / 2 - g.textWidth(d) / 2, g.height / 2 - 40);
 		g.text(e, g.width / 2 - g.textWidth(e) / 2, g.height / 2 - 20);
 		g.text(f, g.width / 2 - g.textWidth(f) / 2, g.height / 2 );
+		g.text(h, g.width / 2 - g.textWidth(h) / 2, g.height / 2 +20);
 		g.strokeWeight(4);
 		g.stroke(58, 130, 245);
 		g.fill(74, 134, 232, 75);
