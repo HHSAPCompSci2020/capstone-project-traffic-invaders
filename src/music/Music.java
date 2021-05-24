@@ -19,9 +19,9 @@ public class Music
 //		sound.addSoundEffect("Crash.mp3");
 
 		sound.addPlayList();
-		sound.addSong(0, "Song1.mp3");
 		sound.addSong(0, "Song2.mp3");
 		sound.addSong(0, "Song3.mp3");
+		sound.addSong(0, "Song1.mp3");
 
 		sound.addPlayList();
 		sound.addSong(1, "Crash.mp3");
