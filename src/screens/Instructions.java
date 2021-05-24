@@ -29,15 +29,18 @@ public class Instructions extends Screen {
 		g.textSize(40);
 		g.text("Instructions", g.width / 2 - g.textWidth("Instructions") / 2, 100);
 		g.textSize(12);
-		g.text("These are the instructions for how to play the game.",
-				g.width / 2 - g.textWidth("These are the instructions for how to play the game.") / 2,
-				g.height / 2 - 50);
-		g.text("These are the instructions for how to play the game.",
-				g.width / 2 - g.textWidth("These are the instructions for how to play the game.") / 2,
-				g.height / 2 - 30);
-		g.text("These are the instructions for how to play the game.",
-				g.width / 2 - g.textWidth("These are the instructions for how to play the game.") / 2,
-				g.height / 2 - 10);
+		String a = "Welcome to Traffic Invaders; Here are the controls for the game.";
+		String b = "Use WASD to move or use mouse movement by pressing the E key.";
+		String c = "If you collide with the bottom of the screen or an incoming car ";
+		String d = "you will lose a unit of health. Depending on your car";
+		String e = "your HP varies. Make sure to pick whatever car fits your playstyle!";
+		String f = "Try to make it as far as you can to set a new highscore!";
+		g.text(a, g.width / 2 - g.textWidth(a) / 2, g.height / 2 - 100);
+		g.text(b, g.width / 2 - g.textWidth(b) / 2, g.height / 2 - 80);
+		g.text(c, g.width / 2 - g.textWidth(c) / 2, g.height / 2 - 60);
+		g.text(d, g.width / 2 - g.textWidth(d) / 2, g.height / 2 - 40);
+		g.text(e, g.width / 2 - g.textWidth(e) / 2, g.height / 2 - 20);
+		g.text(f, g.width / 2 - g.textWidth(f) / 2, g.height / 2 );
 		g.strokeWeight(4);
 		g.stroke(58, 130, 245);
 		g.fill(74, 134, 232, 75);
