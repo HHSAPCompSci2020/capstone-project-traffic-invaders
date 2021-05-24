@@ -3,6 +3,7 @@ package structure;
 import java.util.ArrayList;
 import backgrounds.*;
 import entities.*;
+import music.Music;
 import processing.core.PApplet;
 import screens.BackgroundSelect;
 import screens.GameOver;
@@ -22,6 +23,8 @@ import screens.Screen;
 public class Game extends PApplet {
 
 	private Screen screen;
+	
+	private Music music = new Music();
 
 	private Background b;
 	public int rCol, gCol, bCol;
@@ -50,7 +53,7 @@ public class Game extends PApplet {
 		surface.setSize(800, 600);
 		surface.setResizable(false);
 		mouseMode = false;
-
+		music.playMusic();
 	}
 
 	/**
@@ -175,6 +178,7 @@ public class Game extends PApplet {
 		} else if (current == CurrentScreen.GAMEOVER) {
 			if (mouseX > 265 && mouseX < 535 && mouseY > 400 && mouseY < 445) {
 				player.reset();
+				music.playMusic();
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
 				b.reset();
@@ -261,6 +265,7 @@ public class Game extends PApplet {
 						|| player.isPointInside(e.getX(), e.getY() + e.getHeight())
 						|| player.isPointInside(e.getX() + e.getWidth(), e.getY() + e.getHeight())) {
 					System.out.println("hit");
+					music.crash();
 					player.hit();
 					onCoolDown = true;
 					lastHit = tick;
@@ -269,12 +274,14 @@ public class Game extends PApplet {
 						screen = new GameOver();
 						allScores.add((int) GameOver.finalScore());
 						current = CurrentScreen.GAMEOVER;
+						music.gameOver();
 					}
 
 				}
 			}
 		} else if (tick - lastHit > 100) {
 			onCoolDown = false;
+			music.playMusic();
 		}
 		if (player.getX() < Background.getFirstLineX()) {
 			player.setLoc(Background.getFirstLineX(), player.getY());

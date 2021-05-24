@@ -87,7 +87,7 @@ public class BackgroundSelect extends Screen {
 		g.textSize(15);
 		g.text("Desert Road", (100 - (g.textWidth("Desert Road") / 2)) + 550, 320);
 		g.textSize(12);
-		g.text("Careful, don’t", (100 - (g.textWidth("Careful, don’t") / 2)) + 550, 360);
+		g.text("Careful, don't", (100 - (g.textWidth("Careful, don't") / 2)) + 550, 360);
 		g.text("get sand in", (100 - (g.textWidth("get sand in") / 2)) + 550, 380);
 		g.text("your socks!", (100 - (g.textWidth("your socks") / 2)) + 550, 400);
 		g.push();
