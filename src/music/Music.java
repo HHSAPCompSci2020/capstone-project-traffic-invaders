@@ -42,4 +42,16 @@ public class Music
 		sound.changePlayList(1);
 		sound.nextSong();
 	}
+	
+	public void toggle()
+	{
+		if(sound.isPlaying())
+		{
+			sound.stopSong();
+		}
+		else
+		{
+			playMusic();
+		}
+	}
 }
