@@ -15,7 +15,7 @@ public class Background {
 	static int difficulty;
 	int runs;
 	PFont font;
-	public static boolean paused = false;
+	private static boolean paused = false;
 
 	private int r, g, b;
 

@@ -7,7 +7,7 @@ package backgrounds;
  * @version 1.0
  */
 public class BackgroundManager {
-	public static Background b = new NormalRoad();
+	private static Background b = new NormalRoad();
 
 	public static void setBackground(String s) {
 		if (s == "normal") {

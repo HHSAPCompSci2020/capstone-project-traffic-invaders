@@ -265,7 +265,7 @@ public class Game extends PApplet {
 						|| player.isPointInside(e.getX(), e.getY() + e.getHeight())
 						|| player.isPointInside(e.getX() + e.getWidth(), e.getY() + e.getHeight())) {
 					System.out.println("hit");
-					music.crash();
+//					music.crash();
 					player.hit();
 					onCoolDown = true;
 					lastHit = tick;
