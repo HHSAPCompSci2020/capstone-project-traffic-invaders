@@ -13,13 +13,15 @@ public class Music
 	{
 		super();
 		sound = new JayLayer("Songs/","Songs/",false);
-		songs = new String[] {"Crash.mp3", "Song1.mp3", "GameOver.mp3"};
+		songs = new String[] {"Crash.mp3", "Song1.mp3", "Song2.mp3", "Song3.mp3", "GameOver.mp3"};
 //		soundEffects = new String[] {"GameOver.mp3", "Crash.mp3"};
 //		sound.addSoundEffect("GameOver.mp3");
 //		sound.addSoundEffect("Crash.mp3");
 
 		sound.addPlayList();
 		sound.addSong(0, "Song1.mp3");
+		sound.addSong(0, "Song2.mp3");
+		sound.addSong(0, "Song3.mp3");
 
 		sound.addPlayList();
 		sound.addSong(1, "Crash.mp3");
