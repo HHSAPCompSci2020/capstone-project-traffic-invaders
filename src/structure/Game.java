@@ -213,8 +213,6 @@ public class Game extends PApplet {
 					player.setUp(true);
 				} else if (key == 'd') {
 					player.setRight(true);
-				} else if(key == 'f') {
-					music.toggle();
 				}
 			}
 		}

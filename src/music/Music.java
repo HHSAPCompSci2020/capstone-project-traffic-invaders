@@ -43,15 +43,15 @@ public class Music
 		sound.nextSong();
 	}
 	
-	public void toggle()
-	{
-		if(sound.isPlaying())
-		{
-			sound.stopSong();
-		}
-		else
-		{
-			playMusic();
-		}
-	}
+//	public void toggle()
+//	{
+//		if(sound.isPlaying())
+//		{
+//			sound.stopSong();
+//		}
+//		else
+//		{
+//			playMusic();
+//		}
+//	}
 }
