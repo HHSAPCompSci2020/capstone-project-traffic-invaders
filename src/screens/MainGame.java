@@ -2,7 +2,6 @@ package screens;
 
 import java.util.ArrayList;
 
-import backgrounds.Background;
 import entities.*;
 import processing.core.PApplet;
 

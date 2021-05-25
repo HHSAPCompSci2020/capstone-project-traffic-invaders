@@ -10,7 +10,7 @@ import jay.jaysound.JayLayer;
 public class Music
 {
 	private JayLayer sound;
-	private String[] songs;
+//	private String[] songs;
 	
 	/**
 	 * Initializes all the playlists containing sound effects and songs
@@ -19,7 +19,7 @@ public class Music
 	{
 		super();
 		sound = new JayLayer("Songs/","Songs/",false);
-		songs = new String[] {"Crash.mp3", "Song1.mp3", "Song2.mp3", "Song3.mp3", "GameOver.mp3"};
+//		songs = new String[] {"Crash.mp3", "Song1.mp3", "Song2.mp3", "Song3.mp3", "GameOver.mp3"};
 
 		sound.addPlayList();
 		sound.addSong(0, "Song.mp3");

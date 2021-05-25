@@ -1,8 +1,6 @@
 package screens;
 
-import backgrounds.Background;
 import processing.core.PApplet;
-import processing.core.PConstants;
 import processing.core.PFont;
 
 /**

@@ -17,7 +17,7 @@ public class BackgroundSelect extends Screen {
 	private PFont font;
 	private PImage background1, background2, background3;
 	private static String selection = "normal";
-	private double mouseX = 0, mouseY = 0;
+//	private double mouseX = 0, mouseY = 0;
 
 	
 	/**
@@ -26,8 +26,8 @@ public class BackgroundSelect extends Screen {
 	 * @param PApplet g - A PApplet object which sets the main menu
 	 */
 	public void draw(PApplet g) {
-		mouseX = g.mouseX;
-		mouseY = g.mouseY;
+//		mouseX = g.mouseX;
+//		mouseY = g.mouseY;
 		background1 = g.loadImage("images/NormalRoad.png");
 		background2 = g.loadImage("images/CountryRoad.png");
 		background3 = g.loadImage("images/DesertRoad.png");

@@ -1,6 +1,5 @@
 package entities;
 
-import backgrounds.Background;
 import processing.core.PApplet;
 import processing.core.PImage;
 

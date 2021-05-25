@@ -27,8 +27,8 @@ public class Game extends PApplet {
 	private Music music = new Music();
 
 	private Background b;
-	private int rCol, gCol, bCol;
-	private PApplet g;
+//	private int rCol, gCol, bCol;
+//	private PApplet g;
 	private static ArrayList<Integer> allScores = new ArrayList<Integer>();
 
 	private  static CurrentScreen current;
