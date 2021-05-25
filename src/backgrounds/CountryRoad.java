@@ -2,6 +2,11 @@ package backgrounds;
 
 import processing.core.PApplet;
 
+/**
+ * Country road background
+ * @author Vikram
+ * @version 1.0
+ */
 public class CountryRoad extends Background
 {
 	/**
