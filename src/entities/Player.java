@@ -16,8 +16,15 @@ public class Player extends Entity {
 	private int velocity, maxVelocity, friction, dragBack;
 	private int health, beginHealth;
 	private PImage img;
-	public String toSet = "images/blueTruck.png";
+	private String toSet = "images/blueTruck.png";
 
+	/**
+	 * Sets the initial state of the player
+	 * @param x x coordinate of player
+	 * @param y y coordinate of the player
+	 * @param width width of the player
+	 * @param height height of the player
+	 */
 	public Player(int x, int y, int width, int height) {
 
 		super(x, y, width, height);
@@ -36,7 +43,9 @@ public class Player extends Entity {
 		dragBack = 2;
 	}
 
-	@Override
+	/**
+	 * Acting of the Player
+	 */
 	public void act() {
 		if (right != left) {
 			if (velocity + Math.abs(disX) < maxVelocity) {
@@ -74,7 +83,10 @@ public class Player extends Entity {
 
 	}
 
-	@Override
+	/**
+	 * draws the player
+	 * @param g PApplet object g
+	 */
 	public void draw(PApplet g) {
 		img = g.loadImage(toSet);
 
@@ -107,6 +119,9 @@ public class Player extends Entity {
 		return beginHealth;
 	}
 
+	/**
+	 * Reduces the player's health everytime the it is hit
+	 */
 	public void hit() {
 		health--;
 	}
@@ -140,6 +155,9 @@ public class Player extends Entity {
 		maxVelocity = set;
 	}
 
+	/**
+	 * Resets the variables for the player
+	 */
 	public void reset() {
 		health = getBeginHealth();
 		disX = 0;

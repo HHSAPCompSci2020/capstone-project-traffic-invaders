@@ -11,8 +11,8 @@ import processing.core.PFont;
  */
 public class Instructions extends Screen {
 
-	PFont font;
-	static int finalScore;
+	private PFont font;
+	private static int finalScore;
 
 	/**
 	 * @param PApplet g - A PApplet object which sets the main menu

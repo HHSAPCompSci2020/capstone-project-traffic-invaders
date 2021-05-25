@@ -7,8 +7,13 @@ package backgrounds;
  * @version 1.0
  */
 public class BackgroundManager {
+	
 	private static Background b = new NormalRoad();
 
+	/**
+	 * Sets the background of the game using user input
+	 * @param s Determines which background to use
+	 */
 	public static void setBackground(String s) {
 		if (s == "normal") {
 			b = new NormalRoad();

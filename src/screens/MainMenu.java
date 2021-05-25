@@ -16,8 +16,8 @@ import structure.Game;
  */
 public class MainMenu extends Screen {
 
-	PImage bg;
-	PFont font;
+	private PImage bg;
+	private PFont font;
 
 	/**
 	 * Will initialize variables here later on

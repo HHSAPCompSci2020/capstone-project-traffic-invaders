@@ -14,9 +14,12 @@ import processing.core.PFont;
  */
 public class GameOver extends Screen {
 
-	PFont font;
-	static int finalScore;
+	private PFont font;
+	private static int finalScore;
 
+	/**
+	 * sets the initial state of the game over screen
+	 */
 	public GameOver() {
 		finalScore = Background.getScore();
 	}

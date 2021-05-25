@@ -14,7 +14,7 @@ public class Background {
 	static int score;
 	static int difficulty;
 	int runs;
-	PFont font;
+	private PFont font;
 	private static boolean paused = false;
 
 	private int r, g, b;
@@ -67,6 +67,10 @@ public class Background {
 
 	}
 
+	/**
+	 * Pause screen
+	 * @param s PApplet object s
+	 */
 	public void paused(PApplet s) {
 		s.fill(0, 0, 0);
 		s.rect(730, 10, 50, 50);
@@ -104,29 +108,14 @@ public class Background {
 		s.line(secondLineX, 0, secondLineX, s.height);
 	}
 
-	/**
-	 * Gets the coordinates of the first line
-	 * 
-	 * @return firstLineX
-	 */
 	public static int getFirstLineX() {
 		return firstLineX;
 	}
 
-	/**
-	 * Gets the coordinates of the second line
-	 * 
-	 * @return secondLineX
-	 */
 	public static int getSecondLineX() {
 		return secondLineX;
 	}
 
-	/**
-	 * Gets the speed of the screen
-	 * 
-	 * @return time
-	 */
 	public static float getSpeed() {
 		return time;
 	}
@@ -139,6 +128,9 @@ public class Background {
 		return score;
 	}
 
+	/**
+	 * Resets score and time
+	 */
 	public void reset() {
 		score = 0;
 		time = 0;

@@ -7,16 +7,19 @@ import processing.core.PImage;
 
 public class PlayerSelect extends Screen {
 
-	PImage bg;
-	PFont font;
-	PImage player1a, player1b, player2a, player2b, player3a, player3b;
-	static String selection = "default";
-	static String selectionPlay1 = "blue";
-	static String selectionPlay2 = "black";
-	static String selectionPlay3 = "pink";
-	double mouseX = 0, mouseY = 0;
+	private PImage bg;
+	private PFont font;
+	private PImage player1a, player1b, player2a, player2b, player3a, player3b;
+	private static String selection = "default";
+	private static String selectionPlay1 = "blue";
+	private static String selectionPlay2 = "black";
+	private static String selectionPlay3 = "pink";
+	private double mouseX = 0, mouseY = 0;
 
-	@Override
+	/**
+	 * Draws the player select screen
+	 * @param g PApplet object
+	 */
 	public void draw(PApplet g) {
 		mouseX = g.mouseX;
 		mouseY = g.mouseY;

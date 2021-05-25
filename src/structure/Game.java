@@ -27,11 +27,11 @@ public class Game extends PApplet {
 	private Music music = new Music();
 
 	private Background b;
-	public int rCol, gCol, bCol;
-	PApplet g;
-	static ArrayList<Integer> allScores = new ArrayList<Integer>();
+	private int rCol, gCol, bCol;
+	private PApplet g;
+	private static ArrayList<Integer> allScores = new ArrayList<Integer>();
 
-	public static CurrentScreen current;
+	private  static CurrentScreen current;
 	private int tick, lastHit;
 	private static boolean onCoolDown;
 	private boolean mouseMode;

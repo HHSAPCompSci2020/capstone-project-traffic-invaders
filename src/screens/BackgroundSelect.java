@@ -7,13 +7,15 @@ import processing.core.PImage;
 
 public class BackgroundSelect extends Screen {
 
-	PImage bg;
-	PFont font;
-	PImage background1, background2, background3;
-	static String selection = "normal";
-	double mouseX = 0, mouseY = 0;
+	private PImage bg;
+	private PFont font;
+	private PImage background1, background2, background3;
+	private static String selection = "normal";
+	private double mouseX = 0, mouseY = 0;
 
-	@Override
+	/**
+	 * Draws the background select screen
+	 */
 	public void draw(PApplet g) {
 		mouseX = g.mouseX;
 		mouseY = g.mouseY;

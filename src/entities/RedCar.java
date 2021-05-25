@@ -13,6 +13,14 @@ public class RedCar extends Entity
 {
 	private PImage img;
 	private int speed;
+	
+	/**
+	 * Sets the initial state of the RedCar
+	 * @param x x coordinate of RedCar
+	 * @param y y coordinate of the RedCar
+	 * @param width width of the RedCar
+	 * @param height height of the RedCar
+	 */
 	public RedCar(int x, int y, int width, int height, int speed) {
 		super(x, y, width, height);
 		this.speed = speed;

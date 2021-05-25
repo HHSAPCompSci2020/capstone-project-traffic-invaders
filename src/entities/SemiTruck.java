@@ -13,6 +13,14 @@ public class SemiTruck extends Entity
 {
 	private PImage img;
 	private int speed;
+	
+	/**
+	 * Sets the initial state of the SemiTruck
+	 * @param x x coordinate of SemiTruck
+	 * @param y y coordinate of the SemiTruck
+	 * @param width width of the SemiTruck
+	 * @param height height of the SemiTruck
+	 */
 	public SemiTruck(int x, int y, int width, int height, int speed) {
 		super(x, y, width, height);
 		this.speed = speed;
