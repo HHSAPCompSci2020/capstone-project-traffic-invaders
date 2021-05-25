@@ -65,8 +65,9 @@ public class Player extends Entity {
 				}
 			}
 		}
-		// System.out.println("Right: " + right +" left: " + left + " Up: " + up + "
-		// down: " + down);
+		if(disX == 1) {
+			disX = 0;
+		}
 		setLoc(getX() + disX, getY() + disY);
 		if (disY > dragBack) {
 			disY -= friction;
@@ -80,7 +81,6 @@ public class Player extends Entity {
 		if (disX < 0) {
 			disX += friction;
 		}
-
 	}
 
 	/**
@@ -149,6 +149,9 @@ public class Player extends Entity {
 	public void setHealth(int set) {
 		beginHealth = set;
 		health = set;
+	}
+	public void setFriction(int x) {
+		friction = x;
 	}
 
 	public void setVelocity(int set) {

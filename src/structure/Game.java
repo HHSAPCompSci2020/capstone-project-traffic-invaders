@@ -145,7 +145,8 @@ public class Game extends PApplet {
 					player.setImage("images/policeCar.png");
 				}
 				player.setHealth(2);
-				player.setVelocity(15);
+				player.setVelocity(12);
+				player.setFriction(2);
 			} else if (mouseX > 550.0 && mouseX < 750.0 && mouseY > 175.0 && mouseY < 375.0) {
 				PlayerSelect.setSelection("van");
 				if (mouseX > 660 && mouseX < 690 && mouseY > 320 && mouseY < 350) {
