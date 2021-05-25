@@ -264,7 +264,6 @@ public class Game extends PApplet {
 		tick++;
 
 		ArrayList<Entity> entities = MainGame.getEntities();
-		// System.out.println(lastHit - tick);
 		if (!onCoolDown) {
 			for (Entity e : entities) {
 				if (e instanceof Player) {
@@ -273,8 +272,6 @@ public class Game extends PApplet {
 				if (player.isPointInside(e.getX(), e.getY()) || player.isPointInside(e.getX() + e.getWidth(), e.getY())
 						|| player.isPointInside(e.getX(), e.getY() + e.getHeight())
 						|| player.isPointInside(e.getX() + e.getWidth(), e.getY() + e.getHeight())) {
-					System.out.println("hit");
-//					music.crash();
 					player.hit();
 					onCoolDown = true;
 					lastHit = tick;
