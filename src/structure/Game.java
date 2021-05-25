@@ -17,7 +17,7 @@ import screens.Screen;
  * The Game class represents the actual game panel where the game is played on
  *
  * @author Karan Dalal
- * @version 1.0
+ * @version 4.0
  *
  */
 public class Game extends PApplet {

@@ -5,6 +5,12 @@ import processing.core.PConstants;
 import processing.core.PFont;
 import processing.core.PImage;
 
+/**
+ * The background selector screen.
+ * 
+ * @author Karan Dalal
+ * @version 2.0
+ */
 public class BackgroundSelect extends Screen {
 
 	private PImage bg;
@@ -13,8 +19,11 @@ public class BackgroundSelect extends Screen {
 	private static String selection = "normal";
 	private double mouseX = 0, mouseY = 0;
 
+	
 	/**
-	 * Draws the background select screen
+	 * Draws the game over on the drawing surface
+	 * 
+	 * @param PApplet g - A PApplet object which sets the main menu
 	 */
 	public void draw(PApplet g) {
 		mouseX = g.mouseX;

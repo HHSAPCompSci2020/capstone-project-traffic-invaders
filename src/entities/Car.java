@@ -5,7 +5,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
- * The cars which act as obstacles to the main character
+ * The car which act as obstacles to the main character
  * @author Eric Decasper
  * @version 1.0
  */

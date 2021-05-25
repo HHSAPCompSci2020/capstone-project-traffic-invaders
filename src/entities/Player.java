@@ -8,7 +8,7 @@ import structure.Game;
  * Represents the vehicle which the player is
  * 
  * @author Eric Decasper
- * @version 1.0
+ * @version 3.0
  */
 public class Player extends Entity {
 	private int disX, disY;

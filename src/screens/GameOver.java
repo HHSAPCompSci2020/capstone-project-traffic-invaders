@@ -9,8 +9,8 @@ import processing.core.PFont;
  * Is the opening screen which the player will see when they first launch the
  * game, die, or want to quit
  * 
- * @author Eric Decasper
- * @version 1.0
+ * @author Karan Dalal
+ * @version 2.0
  */
 public class GameOver extends Screen {
 
