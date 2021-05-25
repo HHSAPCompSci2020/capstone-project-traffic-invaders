@@ -188,6 +188,9 @@ public class Game extends PApplet {
 				Background.setPaused(true);
 			} else if (Background.getPaused() && (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60)) {
 				Background.setPaused(false);
+			} else if(Background.getPaused() && (mouseX > 265 && mouseX < 535 && mouseY > 10 && mouseY < 45)) {
+				screen = new MainMenu();
+				current = CurrentScreen.MENU;
 			}
 		} else if (current == CurrentScreen.INSTRUCTIONS) {
 			if (mouseX > 265 && mouseX < 535 && mouseY > 500 && mouseY < 545) {

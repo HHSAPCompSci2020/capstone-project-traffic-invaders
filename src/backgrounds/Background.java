@@ -76,6 +76,15 @@ public class Background {
 			s.rect(758, 18, 12, 34);
 		} else {
 			s.triangle(740, 18, 770, 35, 740, 52);
+			s.push();
+			s.strokeWeight(4);
+			s.stroke(58, 130, 245);
+			s.fill(74, 134, 232, 75);
+			s.rect(s.width / 2 - 135, 10, 270, 45, 13, 13, 13, 13);
+			s.fill(255, 255, 255);
+			s.textSize(20);
+			s.text("Quit", s.width / 2 - s.textWidth("Quit") / 2, 45);
+			s.pop();
 		}
 	}
 
