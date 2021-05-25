@@ -4,6 +4,7 @@ import processing.core.PApplet;
 import processing.core.PFont;
 
 /**
+ * Represents the instructions of the game
  * @author Karan Dalal
  * @version 1.0
  */
