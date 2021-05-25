@@ -23,7 +23,7 @@ import screens.Screen;
 public class Game extends PApplet {
 
 	private Screen screen;
-	
+
 	private Music music = new Music();
 
 	private Background b;
@@ -107,8 +107,11 @@ public class Game extends PApplet {
 		int type = MainMenu.clicked(mouseX, mouseY);
 		if (current == CurrentScreen.MENU) {
 			if (type == 1) {
+				player.reset();
+				player.setLoc(400, 400);
 				screen = new MainGame(player);
 				b.reset();
+				Background.setPaused(false);
 				current = CurrentScreen.GAME;
 			} else if (type == 2) {
 				screen = new BackgroundSelect();
@@ -188,7 +191,7 @@ public class Game extends PApplet {
 				Background.setPaused(true);
 			} else if (Background.getPaused() && (mouseX > 730 && mouseX < 780 && mouseY > 10 && mouseY < 60)) {
 				Background.setPaused(false);
-			} else if(Background.getPaused() && (mouseX > 265 && mouseX < 535 && mouseY > 10 && mouseY < 45)) {
+			} else if (Background.getPaused() && (mouseX > 265 && mouseX < 535 && mouseY > 10 && mouseY < 45)) {
 				screen = new MainMenu();
 				current = CurrentScreen.MENU;
 			}
@@ -243,10 +246,10 @@ public class Game extends PApplet {
 				player.setRight(false);
 
 				mouseMode = !mouseMode;
-			} else if(key == 'f') {
+			} else if (key == 'f') {
 				music.toggle();
 			}
-				
+
 		}
 	}
 
