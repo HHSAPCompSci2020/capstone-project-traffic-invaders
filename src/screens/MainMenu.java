@@ -12,7 +12,7 @@ import structure.Game;
  * game, die, or want to quit
  * 
  * @author Karan Dalal
- * @version 1.0
+ * @version 2.0
  */
 public class MainMenu extends Screen {
 

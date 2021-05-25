@@ -4,7 +4,12 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PFont;
 import processing.core.PImage;
-
+/**
+ * The player selection menu screen.
+ * 
+ * @author Karan Dalal
+ * @version 2.0
+ */
 public class PlayerSelect extends Screen {
 
 	private PImage bg;
@@ -14,15 +19,15 @@ public class PlayerSelect extends Screen {
 	private static String selectionPlay1 = "blue";
 	private static String selectionPlay2 = "black";
 	private static String selectionPlay3 = "pink";
-//	private double mouseX = 0, mouseY = 0;
+	private double mouseX = 0, mouseY = 0;
 
 	/**
 	 * Draws the player select screen
 	 * @param g PApplet object
 	 */
 	public void draw(PApplet g) {
-//		mouseX = g.mouseX;
-//		mouseY = g.mouseY;
+		mouseX = g.mouseX;
+		mouseY = g.mouseY;
 		player1a = g.loadImage("images/blueTruck.png");
 		player1b = g.loadImage("images/greenTruck.png");
 		player2a = g.loadImage("images/policeCar.png");
