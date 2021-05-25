@@ -34,7 +34,7 @@ public class Instructions extends Screen {
 		String c = "use mouse movement by pressing the E key.";
 		String d = "If you collide with the bottom of the screen";
 		String e = "or an incoming car you will lose a unit of health.";
-		String k = "Whenever the health bar is red the car is invulnerable";
+		String k = "Whenever the health bar is red the car is invulnerable.";
 		String f = "Depending on your car your HP varies. Make sure to";
 		String h = "pick whatever car fits your playstyle! Try to make";
 		String i = "it as far as you can to set a new highscore!";
